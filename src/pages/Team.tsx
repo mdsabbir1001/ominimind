@@ -7,10 +7,9 @@ import {
   Code, 
   Camera, 
   Pen, 
-  Lightbulb, // Creativity-এর জন্য আইকন
-  Users,      // Collaboration-এর জন্য আইকন
-  Award,      // Excellence-এর জন্য আইকন
-  Rocket      // Innovation-এর জন্য আইকন
+  Lightbulb, // Creativity
+  Users,      // Collaboration
+  Rocket      // Innovation
 } from 'lucide-react';
 
 const Team = () => {
