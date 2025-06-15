@@ -8,49 +8,49 @@ const Services = () => {
       title: 'Brand Identity Design',
       description: 'Complete brand identity packages including logos, color schemes, typography, and brand guidelines.',
       features: ['Logo Design', 'Brand Guidelines', 'Color Palette', 'Typography Selection', 'Business Cards', 'Letterheads'],
-      image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=400'
+      image: 'https://i.ibb.co/WvhbTsG9/Branding.png'
     },
     {
       icon: Monitor,
       title: 'Web Design',
       description: 'Modern, responsive websites that provide exceptional user experiences and drive conversions.',
       features: ['Responsive Design', 'UI/UX Design', 'Landing Pages', 'E-commerce Design', 'Web Applications', 'Prototyping'],
-      image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=400'
+      image: 'https://i.ibb.co/TD974qG3/Web-design.png0'
     },
     {
       icon: Printer,
       title: 'Print Design',
       description: 'Professional print materials that make a lasting impression on your target audience.',
       features: ['Brochures', 'Flyers', 'Posters', 'Business Cards', 'Catalogs', 'Packaging Design'],
-      image: 'https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=400'
+      image: 'https://i.ibb.co/hFdX0z2x/Print-design.png'
     },
     {
       icon: Video,
       title: 'Motion Graphics',
       description: 'Modern, responsive websites that provide exceptional user experiences and drive conversions.',
       features: ['Explainer Videos', 'Social Media Content', 'Website Animations', 'Presentations', 'Logo Animations', 'Animated Ads'],
-      image: 'https://images.pexels.com/photos/147413/twitter-facebook-together-exchange-of-information-147413.jpeg?auto=compress&cs=tinysrgb&w=400'
+      image: 'https://i.ibb.co/KxDjJ2G2/Motion-Graphic.png'
     },
     {
       icon: Package,
       title: 'Packaging Design',
       description: 'Eye-catching packaging designs that help your products stand out on the shelves.',
       features: ['Product Packaging', 'Label Design', '3D Mockups', 'Retail Packaging', 'Shipping Boxes', 'Brand Integration'],
-      image: 'https://images.pexels.com/photos/1036857/pexels-photo-1036857.jpeg?auto=compress&cs=tinysrgb&w=400'
+      image: 'https://i.ibb.co/BHjDy183/Packaging.png'
     },
     {
       icon: Megaphone,
       title: 'Social Media Graphics',
       description: 'Engaging social media visuals that boost your online presence and engagement rates.',
       features: ['Instagram Posts', 'Facebook Covers', 'Twitter Headers', 'LinkedIn Banners', 'Story Templates', 'Ad Creatives'],
-      image: 'https://images.pexels.com/photos/267371/pexels-photo-267371.jpeg?auto=compress&cs=tinysrgb&w=400'
+      image: 'https://i.ibb.co/tPx5t0rv/Social-Media.png'
     },
     {
       icon: Pen,
       title: 'Illustration',
       description: 'Custom illustrations that bring your ideas to life with unique artistic flair.',
       features: ['Digital Illustration', 'Character Design', 'Infographics', 'Editorial Illustration', 'Technical Drawings', 'Icon Design'],
-      image: 'https://images.pexels.com/photos/1367276/pexels-photo-1367276.jpeg?auto=compress&cs=tinysrgb&w=400'
+      image: 'https://i.ibb.co/QvhDH6mS/Illustrations.png'
     },
     {
       icon: Camera,

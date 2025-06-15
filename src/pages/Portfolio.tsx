@@ -73,7 +73,7 @@ const Portfolio = () => {
       title: 'Fresh Drink Poster Design',
       category: 'socialmedia',
       description: 'Responsive website design for environmental consulting firm',
-      cardImage: 'https://i.ibb.co/bgrVFhGY/image.png',
+      cardImage: 'https://i.ibb.co/LD8ZkR5T/image.png',
       modalImages: [
         'https://images.pexels.com/photos/1367276/pexels-photo-1367276.jpeg?auto=compress&cs=tinysrgb&w=600',
         'https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=600',
