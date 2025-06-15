@@ -31,7 +31,7 @@ const Contact = () => {
       'service_5utdtrz',      // EmailJS service ID
       'template_7egickw',     // EmailJS template ID
       e.currentTarget,        // Form element
-      'ZPmjn7pHJ8FIgdOqc'          // EmailJS user ID (public key)
+      'DpV2SrpEFs-Q2fpPw'          // EmailJS user ID (public key)
     )
     .then((result: any) => {
       console.log(result.text);

@@ -44,7 +44,7 @@ const OrderModal = ({ isOpen, onClose, package: selectedPackage }) => {
       'service_5utdtrz',      // EmailJS service ID
       'template_3f3hwm8',     // EmailJS template ID
       emailParams,            // Email parameters
-      'ZPmjn7pHJ8FIgdOqc'      // EmailJS user ID (public key)
+      'DpV2SrpEFs-Q2fpPw'      // EmailJS user ID (public key)
     )
     .then((result) => {
       console.log(result.text);
