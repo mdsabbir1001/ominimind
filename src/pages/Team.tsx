@@ -9,6 +9,7 @@ import {
   Pen, 
   Lightbulb, // Creativity
   Users,      // Collaboration
+  Award,      // Excellence <-- এটি যোগ করা হয়েছে
   Rocket      // Innovation
 } from 'lucide-react';
 
@@ -94,7 +95,6 @@ const Team = () => {
     }
   ];
 
-  // Values সেকশনের জন্য আইকন সহ অ্যারে
   const values = [
     {
       title: 'Creativity',
@@ -202,11 +202,9 @@ const Team = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <div key={index} className="text-center">
-                {/* --- পরিবর্তিত অংশ --- */}
                 <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 bg-gradient-to-br from-blue-100 to-purple-100">
                   <value.icon className="w-8 h-8 text-blue-600" />
                 </div>
-                {/* --- পরিবর্তন শেষ --- */}
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{value.title}</h3>
                 <p className="text-gray-600">{value.description}</p>
               </div>
