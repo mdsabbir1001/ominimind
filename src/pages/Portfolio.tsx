@@ -1,4 +1,27 @@
 import React, { useState } from 'react';
+// Function: ID থাকলে ওটাই ব্যবহার করবে, না থাকলে category অনুযায়ী fallback দেবে
+const getAspectRatio = (project: Project): string => {
+  // ID based specific ratio override
+  const idBasedRatios: { [key: number]: string } = {
+    1: '16 / 9',
+    2: '16 / 9',
+    4: '1 / 1',
+  };
+
+  // Category based fallback ratios
+  const categoryBasedRatios: { [key: string]: string } = {
+    branding: '4 / 5',
+    web: '16 / 9',
+    socialmedia: '9 / 16',
+    print: '3 / 4',
+    packaging: '1 / 1',
+    all: '1 / 1'
+  };
+
+  // Priority: ID check > Category check > Default
+  return idBasedRatios[project.id] || categoryBasedRatios[project.category] || '1 / 1';
+};
+
 import { ExternalLink, Eye, Filter, X } from 'lucide-react';
 
 // Define a type for the project
@@ -220,22 +243,24 @@ const Portfolio = () => {
             </div>
 
             {/* Image Grid */}
+            {/* Image Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 overflow-y-auto h-[60vh]">
               {selectedProject.modalImages.map((image, index) => (
                 <div key={index} className="w-full">
-                  <div className="aspect-w-1 aspect-h-1">
+                  <div style={{ aspectRatio: getAspectRatio(selectedProject) }}>
                     <img
                       src={image}
                       alt={`${selectedProject.title} - ${index + 1}`}
                       className="w-full h-full object-cover rounded-lg"
-                      style={{ aspectRatio: '1/1' }} // Inline style to force 1:1 ratio
-                      onContextMenu={handleContextMenu} // Disable right-click context menu
-                      draggable="false" // Disable image dragging
+                      onContextMenu={handleContextMenu}
+                      draggable="false"
                     />
                   </div>
                 </div>
               ))}
             </div>
+
+
           </div>
         </div>
       )}
