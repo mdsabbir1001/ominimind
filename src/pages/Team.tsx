@@ -9,7 +9,7 @@ import {
   Pen, 
   Lightbulb, // Creativity
   Users,      // Collaboration
-  Award,      // Excellence <-- এটি যোগ করা হয়েছে
+  Award,      // Excellence 
   Rocket      // Innovation
 } from 'lucide-react';
 
@@ -31,10 +31,10 @@ const Team = () => {
     {
       name: 'Ruhul Amin',
       role: 'Project Manager',
-      image: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://i.ibb.co/6753RnGw/Ruhulamin.png',
       bio: 'Manages project timelines, communicates with clients, and ensures the team delivers on time with quality.',
       skills: ['Project Coordination', 'Client Handling', 'Task Scheduling'],
-      icon: Code,
+      icon: Palette,
       social: {
         linkedin: '#',
         twitter: '#',
@@ -60,7 +60,7 @@ const Team = () => {
       image: 'https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=400',
       bio: 'Designs social content that engages audiences and maintains brand consistency across platforms.',
       skills: ['Post Design', 'Instagram Reels Layouts', 'Facebook Ads'],
-      icon: Code,
+      icon: Palette,
       social: {
         linkedin: '#',
         twitter: '#',
@@ -68,7 +68,7 @@ const Team = () => {
       }
     },
     {
-      name: 'Alex Martinez',
+      name: 'Hidden Name',
       role: 'Motion Graphic Designer',
       image: 'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=400',
       bio: 'Produces animated videos, reels, and explainer visuals to elevate brand storytelling.',

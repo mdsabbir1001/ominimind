@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Check, Star, Zap, Crown } from 'lucide-react';
+import { Check, Star, Zap, Crown, Wrench } from 'lucide-react'; // Wrench আইকন যোগ করা হয়েছে
 import OrderModal from '../components/OrderModal';
 
 const Packages = () => {
@@ -45,7 +45,10 @@ const Packages = () => {
         'Social Media Kit (profile, cover, 3 posts)',
       ],
       deliverables: [
-        'All source files. All standard image and document formats (e.g., JPEG, PNG, PDF, AI, EPS, SVG - implied by "All source files + formats")',
+        'All source files',
+        'All standard formats',
+        'JPEG, PNG, PDF',
+        'AI, EPS, SVG'
       ]
     },
     {
@@ -99,7 +102,6 @@ const Packages = () => {
           {packages.map((pkg) => (
             <div
               key={pkg.id}
-              // ---
               className={`relative bg-white rounded-2xl shadow-lg transition-transform hover:scale-105 flex flex-col ${
                 pkg.popular ? 'ring-4 ring-purple-500' : ''
               }`}
@@ -162,7 +164,27 @@ const Packages = () => {
           ))}
         </div>
 
-        {/* ...  ... */}
+        {/* --- Custom Package CTA Start--- */}
+        <div className="mt-20 bg-white p-10 rounded-2xl shadow-lg text-center">
+            <div className="flex justify-center mb-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full flex items-center justify-center">
+                    <Wrench className="w-8 h-8 text-blue-600" />
+                </div>
+            </div>
+            <h2 className="text-3xl font-bold text-gray-900 mb-3">
+                Need a Custom Package?
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+                If our standard packages don't quite fit your project's needs, we're happy to create a custom plan just for you. Get in touch to discuss your requirements and we'll provide a tailored quote.
+            </p>
+            <a
+                href="/contact"
+                className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-10 py-3 rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all"
+            >
+                Get a Custom Quote
+            </a>
+        </div>
+        {/* --- Custom Package CTA End --- */}
         
       </div>
 

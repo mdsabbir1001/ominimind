@@ -218,7 +218,7 @@ const Contact = () => {
                       <option value="">Select a service</option>
                       <option value="brand-identity">Brand Identity</option>
                       <option value="web-design">Web Design</option>
-                      <option value="mobile-app">Mobile App Design</option>
+                      <option value="mobile-app">Motions Graphic</option>
                       <option value="print-design">Print Design</option>
                       <option value="packaging">Packaging Design</option>
                       <option value="social-media">Social Media Graphics</option>
@@ -236,10 +236,10 @@ const Contact = () => {
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     >
                       <option value="">Select budget range</option>
-                      <option value="under-500">Under $500</option>
-                      <option value="500-1000">$500 - $1,000</option>
-                      <option value="1000-2500">$1,000 - $2,500</option>
-                      <option value="2500-5000">$2,500 - $5,000</option>
+                      <option value="under-500">Under $200</option>
+                      <option value="500-1000">$200 - $500</option>
+                      <option value="1000-2500">$500 - $1,000</option>
+                      <option value="2500-5000">$1,000 - $2,500</option>
                       <option value="over-5000">Over $5,000</option>
                     </select>
                   </div>
