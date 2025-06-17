@@ -42,19 +42,23 @@ const Packages = () => {
         'Logo Design (4-5 concepts)',
         'Full Stationery Design',
         'Brand Guideline (4–5 pages)',
+        '5 Revisions',
         'Social Media Kit (profile, cover, 3 posts)',
+        'Delivery in 4 Days',
+
       ],
       deliverables: [
         'All source files',
         'All standard formats',
         'JPEG, PNG, PDF',
-        'AI, EPS, SVG'
+        'AI, EPS, SVG',
+        'Priority Email Support',
       ]
     },
     {
       id: 'enterprise',
       name: 'Enterprise',
-      price: 399,
+      price: 399+"+",
       icon: Crown,
       color: 'from-gradient-to-r from-purple-600 to-pink-600',
       popular: false,
@@ -62,19 +66,16 @@ const Packages = () => {
       features: [
         'Logo Design (Unlimited concepts)',
         'Complete Brand Identity System',
-        'Marketing Materials Suite',
-        'Website Design (10+ pages)',
-        'Mobile App Design Concepts',
+        'Website Design (up to 5 pages)',
+        'Packaging Design',
+        'Brand Strategy (PDF report)',
         'Unlimited Revisions',
         'Dedicated support'
       ],
       deliverables: [
-        'Complete brand identity system',
-        'Marketing materials suite',
-        'Website design & development',
-        'Mobile app design concepts',
-        'Packaging design concepts',
-        'Brand strategy document'
+        'Source files + All formats',
+        '1-on-1 Creative Call',
+        '6 Months Support',
       ]
     }
   ];
