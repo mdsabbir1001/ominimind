@@ -5,9 +5,15 @@ const getAspectRatio = (project: Project): string => {
   const idBasedRatios: { [key: number]: string } = {
     1: '16 / 9', // Branding
     2: '16 / 9', // Web Design
-    4: '3 / 4', // Food & Beverage
-    5: '1 / 1', // Social Media Ads
-    6: '16 / 9', //Youtube Thumbnails
+    3: '3 / 4', // Food & Beverage
+    301: '1 / 1', // Product Ads
+    302: '3 / 4', // Hoodie
+    303: '1 / 1', // Real Estate Social Media
+    304: '16 / 9', // YouTube Thumbnails
+    5: '16 / 9' ,// Packaging Design
+    501: '15 / 9' ,// Packaging Design
+    502: '6 / 4' // Packaging Design
+
   };
 
   // Category based fallback ratios
@@ -66,7 +72,7 @@ const Portfolio = () => {
       ]
     },
     {
-      id: 3,
+      id: 2,
       title: 'GreenEarth Website',
       category: 'web',
       description: 'Responsive website design for environmental consulting firm',
@@ -79,8 +85,9 @@ const Portfolio = () => {
         'https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=600'
       ]
     },
+    ///// Start Social Media
     {
-      id: 4,
+      id: 3,
       title: 'Food & Beverage',
       category: 'socialmedia',
       description: "Custom design solutions for your restaurant or food brand. We capture the taste and quality of your offerings through stunning visuals that attract customers and boost sales. From social media to packaging, we've got you covered.",
@@ -93,9 +100,9 @@ const Portfolio = () => {
         'https://i.ibb.co/SwDxDBZP/1.png',
         'https://i.ibb.co/pjfvxjnT/2.png'
       ]
-    },
+    }, 
     {
-      id: 5,
+      id: 301,
       title: 'Product Ads',
       category: 'socialmedia',
       description: "Stop the scroll and capture your audience. We create social media ads that don't just look beautiful - they deliver your brand's message clearly and are built to drive sales. Let our designs make your next campaign a success.",
@@ -112,7 +119,35 @@ const Portfolio = () => {
       ]
     },
     {
-      id: 6,
+      id: 302,
+      title: 'Hoodie',
+      category: 'socialmedia',
+      description: "Sell more than just hoodies! sell a lifestyle. Our social media designs for fashion brands create a powerful online presence, turning followers into loyal customers.",
+      cardImage: 'https://i.ibb.co/bMFywxgD/Image-tv8u5htv8u5htv8u.png',
+      modalImages: [
+        'https://i.ibb.co/CK9q0tRp/hoodei-design-1.jpg',
+        'https://i.ibb.co/MkhDC2Q1/hoodei-design-2.jpg',
+        'https://i.ibb.co/hRHNVZzq/hoodie-4.jpg',
+        'https://i.ibb.co/kg6jdttj/hoodie-new-2.jpg',
+        'https://i.ibb.co/zHQGDjTn/hoodie-new.jpg',
+        'https://i.ibb.co/9BXSLKw/hoodie-3.png',
+      ]
+    },
+    {
+      id: 303,
+      title: 'Real Estate Social Media',
+      category: 'socialmedia',
+      description: "Elevate your real estate brand's online presence with our stunning social media designs. We create visually appealing covers and ads that capture attention and drive engagement for your property listings and company.",
+      cardImage: 'https://i.ibb.co/qYFztsdW/Image-im3av1im3av1im3a.png',
+      modalImages: [
+        'https://i.ibb.co/6RPtTynV/real-state-design-4.jpg',
+        'https://i.ibb.co/Gf1Jrdxq/e390c9215329117-676953272217e.jpg',
+        'https://i.ibb.co/LzyLSgqN/real-estate-3.jpg',
+        'https://i.ibb.co/LXXxGd7T/real-estate-design.jpg',
+      ]
+    },
+    {
+      id: 304,
       title: 'YouTube Thaumbnails',
       category: 'socialmedia',
       description: "our video's first impression matters. We create professional, high-quality YouTube thumbnails designed to stop the scroll, spark curiosity, and dramatically increase your views.",
@@ -128,6 +163,55 @@ const Portfolio = () => {
         'https://i.ibb.co/4kdBvzV/image.png',
         'https://i.ibb.co/jPH2ZDCG/496943370-643749558620057-1703896485107095177-n.jpg',
         'https://i.ibb.co/KjQ27Bnv/tgjjgj.jpg',
+      ]
+    },
+    /////Social Media End
+    ///// Start Print Design
+
+
+
+
+    //// End Print Design
+    //// Start Packaging Design
+    {
+      id: 5,
+      title: 'Packaging Design',
+      category: 'packaging',
+      description: "Creative and structural packaging design for beauty products. We craft unique boxes that not only protect the product but also tell a compelling brand story from the first glance.",
+      cardImage: 'https://i.ibb.co/vvXMZmWJ/mud-mask-box.jpg',
+      modalImages: [
+        'https://i.ibb.co/wNdvrFYC/5.png',
+        'https://i.ibb.co/23DWzQms/1.jpg',
+        'https://i.ibb.co/TMy9XGXW/2.jpg',
+        'https://i.ibb.co/CpNPyGCT/3.jpg',
+        'https://i.ibb.co/zWNTRjBy/4.jpg',
+      ]
+    },
+    {
+      id: 501,
+      title: 'Packaging Design',
+      category: 'packaging',
+      description: "Clean and fresh packaging design for cosmetic and skincare brands. Our designs reflect the purity and quality of your natural ingredients, creating an irresistible appeal for customers.",
+      cardImage: 'https://i.ibb.co/Df0zJJg0/Essential-Oil-Dropper-Bottle-Mockup-min.jpg',
+      modalImages: [
+        'https://i.ibb.co/sJHYjHNd/01-min.jpg',
+        'https://i.ibb.co/FfPfqsc/essential-3-jpg-min.jpg',
+        'https://i.ibb.co/Df0zJJg0/Essential-Oil-Dropper-Bottle-Mockup-min.jpg',
+        'https://i.ibb.co/GQCDfVf8/Essential-Oil-Bottle-Mockup-min.jpg',
+        'https://i.ibb.co/fVWYr2GW/Free-Dropper-Bottle-Mockup-3-min.jpg',
+        'https://i.ibb.co/Mx40XD06/mockup-essential-05-min.jpg',
+      ]
+    },
+    {
+      id: 502,
+      title: 'Packaging Design',
+      category: 'packaging',
+      description: "Professional and trustworthy packaging for pharmaceutical and wellness products. We design clear, informative, and clean packaging that builds consumer confidence and communicates reliability.",
+      cardImage: 'https://i.ibb.co/kV9D4S06/Package-Box-02-579-min.png',
+      modalImages: [
+        'https://i.ibb.co/kV9D4S06/Package-Box-02-579-min.png',
+        'https://i.ibb.co/C5H2Vgdd/X-NG-NANO-min.png',
+        'https://i.ibb.co/KzxSyh87/Box-Vol-1-Top-2-min.jpg',
       ]
     },
   ];
