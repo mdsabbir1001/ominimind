@@ -32,7 +32,7 @@ const Team = () => {
     {
       name: 'Ruhul Amin',
       role: 'Project Manager',
-      image: 'https://i.ibb.co/6753RnGw/Ruhulamin.png',
+      image: 'https://i.ibb.co/vvKT62hs/Ruhul-amin-edited.png',
       bio: 'Manages project timelines, communicates with clients, and ensures the team delivers on time with quality.',
       skills: ['Project Coordination', 'Client Handling', 'Task Scheduling'],
       icon: Palette,

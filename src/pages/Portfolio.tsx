@@ -5,7 +5,8 @@ const getAspectRatio = (project: Project): string => {
   const idBasedRatios: { [key: number]: string } = {
     1: '16 / 9',
     2: '16 / 9',
-    4: '1 / 1',
+    4: '3 / 4',
+    5: '1 / 1',
   };
 
   // Category based fallback ratios
@@ -93,18 +94,36 @@ const Portfolio = () => {
     },
     {
       id: 4,
-      title: 'Fresh Drink Poster Design',
+      title: 'Food & Beverage',
       category: 'socialmedia',
-      description: 'Responsive website design for environmental consulting firm',
-      cardImage: 'https://i.ibb.co/LD8ZkR5T/image.png',
+      description: "Custom design solutions for your restaurant or food brand. We capture the taste and quality of your offerings through stunning visuals that attract customers and boost sales. From social media to packaging, we've got you covered.",
+      cardImage: 'https://i.ibb.co/939qFb8Z/unnamed.png',
       modalImages: [
-        'https://images.pexels.com/photos/1367276/pexels-photo-1367276.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/1367276/pexels-photo-1367276.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=600'
+        'https://i.ibb.co/Kx3mwYQW/FOOD-MANU-1.png',
+        'https://i.ibb.co/G4dRZvrY/FOOD-MANU-2.png',
+        'https://i.ibb.co/yn0YSk9K/FOOD-MANU-4.png',
+        'https://i.ibb.co/TVjWB8G/FOOD-MANU.png',
+        'https://i.ibb.co/SwDxDBZP/1.png',
+        'https://i.ibb.co/pjfvxjnT/2.png'
       ]
-    }
+    },
+    {
+      id: 5,
+      title: 'Product Ads',
+      category: 'socialmedia',
+      description: "Custom design solutions for your restaurant or food brand. We capture the taste and quality of your offerings through stunning visuals that attract customers and boost sales. From social media to packaging, we've got you covered.",
+      cardImage: 'https://i.ibb.co/mV8LWNDh/Gemini-Generated-Image-avrlr2avrlr2avrl.png',
+      modalImages: [
+        'https://i.ibb.co/21KG4PfP/mobile-tech-ads-design.jpg',
+        'https://i.ibb.co/Mk7FXNg5/5.png',
+        'https://i.ibb.co/pDjC7mL/monile-ad-design.jpg',
+        'https://i.ibb.co/mrRGHZQS/4.png',
+        'https://i.ibb.co/1JpCmjgL/mobile-ad-design-ipone.jpg',
+        'https://i.ibb.co/hw9MJ2x/no-1-edit.jpg',
+        'https://i.ibb.co/39n1cPS8/2.png',
+        'https://i.ibb.co/p6CNN13D/Untitled-2.png',
+      ]
+    },
   ];
 
   const filteredProjects = activeFilter === 'all'
