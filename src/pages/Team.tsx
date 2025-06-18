@@ -6,6 +6,7 @@ import {
   Palette, 
   Code, 
   Camera, 
+  Video,
   Pen, 
   Lightbulb, // Creativity
   Users,      // Collaboration
@@ -56,9 +57,9 @@ const Team = () => {
       }
     },
     {
-      name: 'Jahidul Islam',
+      name: 'Medul Hasnat Muhib',
       role: 'Social Media Designer',
-      image: 'https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://i.ibb.co/WpW8jJ3H/midul1.png',
       bio: 'Designs social content that engages audiences and maintains brand consistency across platforms.',
       skills: ['Post Design', 'Instagram Reels Layouts', 'Facebook Ads'],
       icon: Palette,
@@ -74,7 +75,7 @@ const Team = () => {
       image: 'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=400',
       bio: 'Produces animated videos, reels, and explainer visuals to elevate brand storytelling.',
       skills: ['Animated Reels', 'Explainer Videos', 'Logo Animations'],
-      icon: Camera,
+      icon: Video,
       social: {
         linkedin: '#',
         twitter: '#',

@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-// Function: ID থাকলে ওটাই ব্যবহার করবে, না থাকলে category অনুযায়ী fallback দেবে
+// Function: ID
 const getAspectRatio = (project: Project): string => {
   // ID based specific ratio override
   const idBasedRatios: { [key: number]: string } = {
-    1: '16 / 9',
-    2: '16 / 9',
-    4: '3 / 4',
-    5: '1 / 1',
+    1: '16 / 9', // Branding
+    2: '16 / 9', // Web Design
+    4: '3 / 4', // Food & Beverage
+    5: '1 / 1', // Social Media Ads
+    6: '16 / 9', //Youtube Thumbnails
   };
 
   // Category based fallback ratios
@@ -65,20 +66,6 @@ const Portfolio = () => {
       ]
     },
     {
-      id: 2,
-      title: 'GreenEarth Website',
-      category: 'web',
-      description: 'Responsive website design for environmental consulting firm',
-      cardImage: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
-      modalImages: [
-        'https://images.pexels.com/photos/1367276/pexels-photo-1367276.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/1367276/pexels-photo-1367276.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=600'
-      ]
-    },
-    {
       id: 3,
       title: 'GreenEarth Website',
       category: 'web',
@@ -111,7 +98,7 @@ const Portfolio = () => {
       id: 5,
       title: 'Product Ads',
       category: 'socialmedia',
-      description: "Custom design solutions for your restaurant or food brand. We capture the taste and quality of your offerings through stunning visuals that attract customers and boost sales. From social media to packaging, we've got you covered.",
+      description: "Stop the scroll and capture your audience. We create social media ads that don't just look beautiful - they deliver your brand's message clearly and are built to drive sales. Let our designs make your next campaign a success.",
       cardImage: 'https://i.ibb.co/mV8LWNDh/Gemini-Generated-Image-avrlr2avrlr2avrl.png',
       modalImages: [
         'https://i.ibb.co/21KG4PfP/mobile-tech-ads-design.jpg',
@@ -122,6 +109,25 @@ const Portfolio = () => {
         'https://i.ibb.co/hw9MJ2x/no-1-edit.jpg',
         'https://i.ibb.co/39n1cPS8/2.png',
         'https://i.ibb.co/p6CNN13D/Untitled-2.png',
+      ]
+    },
+    {
+      id: 6,
+      title: 'YouTube Thaumbnails',
+      category: 'socialmedia',
+      description: "our video's first impression matters. We create professional, high-quality YouTube thumbnails designed to stop the scroll, spark curiosity, and dramatically increase your views.",
+      cardImage: 'https://i.ibb.co/FTL45W0/kwuasokwuasokwua.png',
+      modalImages: [
+        'https://i.ibb.co/prP96NBh/Ai-Youtube-Thambnail.png',
+        'https://i.ibb.co/8nqHXb9v/8874d8205922893-66c404eb92232.jpg',
+        'https://i.ibb.co/xtD41Tt5/image.png',
+        'https://i.ibb.co/LdMSRd3s/e67dda205922893-66c404eb91d53.jpg',
+        'https://i.ibb.co/rRMN9Ljw/image.png',
+        'https://i.ibb.co/LXqp25Z9/image.png',
+        'https://i.ibb.co/V0BzBgSJ/image.png',
+        'https://i.ibb.co/4kdBvzV/image.png',
+        'https://i.ibb.co/jPH2ZDCG/496943370-643749558620057-1703896485107095177-n.jpg',
+        'https://i.ibb.co/KjQ27Bnv/tgjjgj.jpg',
       ]
     },
   ];
@@ -192,19 +198,15 @@ const Portfolio = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                   <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-                    <div>
-                      <h3 className="text-white font-semibold mb-1">{project.title}</h3>
-                      <p className="text-white/80 text-sm">{project.description}</p>
-                    </div>
                     <div className="flex space-x-2">
                       <button
-                        className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors"
+                        className="w-10 h-10 bg-[#2563eb] backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors"
                         onClick={() => openModal(project)}
                       >
-                        <Eye className="w-4 h-4" />
+                        <Eye className="w-5 h-5" />
                       </button>
-                      <button className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors">
-                        <ExternalLink className="w-4 h-4" />
+                      <button className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white/20 hover:bg-white/20 transition-colors">
+                        <ExternalLink className="w-5 h-5" />
                       </button>
                     </div>
                   </div>
