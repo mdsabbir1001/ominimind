@@ -19,7 +19,7 @@ const Team = () => {
     {
       name: 'Sabbir',
       role: 'Team Lead | Creative Director',
-      image: 'https://i.ibb.co/tTWjsHrP/sabbirN.png',
+      image: 'https://i.ibb.co/KjzhZDmg/sdfa2.png',
       bio: 'Leads the vision, strategy, and design direction of the team. Bridges between client goals and creative execution.',
       skills: ['Brand Strategy', 'Creative Direction', 'Client Communication'],
       icon: Palette,
