@@ -44,7 +44,7 @@ const Team = () => {
       }
     },
     {
-      name: 'Meherun Nahar',
+      name: 'Istrat Jahan',
       role: 'Brand Identity Designer',
       image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400',
       bio: "Creates meaningful brand visuals including logos, typography, and brand kits that reflect the brand's voice.",
@@ -83,7 +83,7 @@ const Team = () => {
       }
     },
     {
-      name: 'Jessica Thompson',
+      name: 'Istrat Jahan',
       role: 'Illustrator',
       image: 'https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=400',
       bio: 'Jessica creates custom illustrations that add personality and uniqueness to every project.',

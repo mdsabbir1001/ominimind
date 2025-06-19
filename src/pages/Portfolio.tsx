@@ -10,6 +10,7 @@ const getAspectRatio = (project: Project): string => {
     302: '3 / 4', // Hoodie
     303: '1 / 1', // Real Estate Social Media
     304: '16 / 9', // YouTube Thumbnails
+    305: '1 / 1', // Travel & Tourism
     5: '16 / 9' ,// Packaging Design
     501: '15 / 9' ,// Packaging Design
     502: '6 / 4' // Packaging Design
@@ -163,6 +164,18 @@ const Portfolio = () => {
         'https://i.ibb.co/4kdBvzV/image.png',
         'https://i.ibb.co/jPH2ZDCG/496943370-643749558620057-1703896485107095177-n.jpg',
         'https://i.ibb.co/KjQ27Bnv/tgjjgj.jpg',
+      ]
+    },
+    {
+      id: 305,
+      title: 'Travel & Tourism',
+      category: 'socialmedia',
+      description: "our video's first impression matters. We create professional, high-quality YouTube thumbnails designed to stop the scroll, spark curiosity, and dramatically increase your views.",
+      cardImage: 'https://i.ibb.co/FTL45W0/kwuasokwuasokwua.png',
+      modalImages: [
+        'https://i.ibb.co/YF92z8B3/sklkiefh.png',
+        'https://i.ibb.co/0jQNP4PX/adf.png',
+        'https://i.ibb.co/5hHMh3Z7/asdf.png',
       ]
     },
     /////Social Media End
