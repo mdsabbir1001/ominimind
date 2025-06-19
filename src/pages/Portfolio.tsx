@@ -171,7 +171,7 @@ const Portfolio = () => {
       title: 'Travel & Tourism',
       category: 'socialmedia',
       description: "our video's first impression matters. We create professional, high-quality YouTube thumbnails designed to stop the scroll, spark curiosity, and dramatically increase your views.",
-      cardImage: 'https://i.ibb.co/FTL45W0/kwuasokwuasokwua.png',
+      cardImage: 'https://i.ibb.co/67GB4GQ5/Image-2e3uvf2e3uvf2e3u.png',
       modalImages: [
         'https://i.ibb.co/YF92z8B3/sklkiefh.png',
         'https://i.ibb.co/0jQNP4PX/adf.png',
