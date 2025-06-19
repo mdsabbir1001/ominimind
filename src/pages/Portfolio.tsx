@@ -6,6 +6,7 @@ const getAspectRatio = (project: Project): string => {
     1: '16 / 9', // Branding
     2: '16 / 9', // Web Design
     3: '3 / 4', // Food & Beverage
+    330: '1 / 1', // Food & Beverage
     301: '1 / 1', // Product Ads
     302: '3 / 4', // Hoodie
     303: '1 / 1', // Real Estate Social Media
@@ -102,7 +103,23 @@ const Portfolio = () => {
         'https://i.ibb.co/SwDxDBZP/1.png',
         'https://i.ibb.co/pjfvxjnT/2.png'
       ]
-    }, 
+    },
+    {
+      id: 330,
+      title: 'Food & Beverage',
+      category: 'socialmedia',
+      description: "Custom design solutions for your restaurant or food brand. We capture the taste and quality of your offerings through stunning visuals that attract customers and boost sales. From social media to packaging, we've got you covered.",
+      cardImage: 'https://i.ibb.co/N6KRw9hp/image.png',
+      modalImages: [
+        'https://i.ibb.co/pjQP0jC2/Burger.png',
+        'https://i.ibb.co/LDVyj1Sz/Burger-112.jpg',
+        'https://i.ibb.co/N6KRw9hp/image.png',
+        'https://i.ibb.co/KcfSDZB9/Food-manu-1.jpg',
+        'https://i.ibb.co/0yyFqHk4/Manipulatoin2.jpg',
+        'https://i.ibb.co/5gGwk68Z/Burger-Post-Design2.jpg',
+
+      ]
+    },
     {
       id: 301,
       title: 'Product Ads',
