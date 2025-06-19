@@ -11,6 +11,7 @@ const getAspectRatio = (project: Project): string => {
     303: '1 / 1', // Real Estate Social Media
     304: '16 / 9', // YouTube Thumbnails
     305: '1 / 1', // Travel & Tourism
+    306: '1 / 1', // Study Abroad
     5: '16 / 9' ,// Packaging Design
     501: '15 / 9' ,// Packaging Design
     502: '6 / 4' // Packaging Design
@@ -170,12 +171,24 @@ const Portfolio = () => {
       id: 305,
       title: 'Travel & Tourism',
       category: 'socialmedia',
-      description: "our video's first impression matters. We create professional, high-quality YouTube thumbnails designed to stop the scroll, spark curiosity, and dramatically increase your views.",
+      description: "From breathtaking destinations to boutique hotels, our social media designs showcase the best of travel. We help you build a captivating online presence that drives bookings and grows your brand",
       cardImage: 'https://i.ibb.co/67GB4GQ5/Image-2e3uvf2e3uvf2e3u.png',
       modalImages: [
-        'https://i.ibb.co/YF92z8B3/sklkiefh.png',
         'https://i.ibb.co/0jQNP4PX/adf.png',
         'https://i.ibb.co/5hHMh3Z7/asdf.png',
+      ]
+    },
+    {
+      id: 306,
+      title: 'Study Abroad',
+      category: 'socialmedia',
+      description: "Begin your global education journey with confidence. We design compelling social media campaigns and materials for study abroad programs that inspire students and connect them with world-class opportunities.",
+      cardImage: 'https://i.ibb.co/ZptqD5z0/Planning-to-study-abroad.jpg',
+      modalImages: [
+        'https://i.ibb.co/YF92z8B3/sklkiefh.png',
+        'https://i.ibb.co/0yTpZqPz/agfag.png',
+        'https://i.ibb.co/tpY34RwS/5.png',
+        'https://i.ibb.co/xpMYzp6/AEU.png',
       ]
     },
     /////Social Media End
