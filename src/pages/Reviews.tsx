@@ -60,9 +60,9 @@ const Reviews = () => {
 
   const stats = [
     { number: '98%', label: 'Client Satisfaction' },
-    { number: '4.9/5', label: 'Average Rating' },
-    { number: '85+', label: 'Happy Clients' },
-    { number: '85%', label: 'Repeat Customers' }
+    { number: '0', label: 'Average Rating' },
+    { number: '90%', label: 'Happy Clients' },
+    { number: '0%', label: 'Repeat Customers' }
   ];
 
   const renderStars = (rating) => {
@@ -96,6 +96,9 @@ const Reviews = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Client <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Reviews</span>
           </h1>
+          <h2 className="text-2xl text-gray-800 mb-4">
+            No Review yet cureently, but we have many happy clients!
+          </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Don't just take our word for it. Here's what our clients have to say about working with us.
           </p>

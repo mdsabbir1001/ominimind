@@ -52,12 +52,12 @@ const Home = () => {
 
       {/* Stats Section */}
       <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              { number: '100+', label: 'Projects Completed', icon: Award },
-              { number: '85+', label: 'Happy Clients', icon: Users },
-              { number: '2', label: 'Years Experience', icon: Sparkles },
+              { number: '10+', label: 'Projects Completed', icon: Award },
+              { number: '90%', label: 'Happy Clients', icon: Users },
+              ///{ number: '2', label: 'Years Experience', icon: Sparkles },
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 bg-gradient-to-br from-blue-100 to-purple-100">
