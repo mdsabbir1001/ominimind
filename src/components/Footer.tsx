@@ -58,12 +58,10 @@ const Footer = () => {
                 <Phone className="w-4 h-4 text-blue-400" />
                 <span className="text-gray-300">+880 0961 1081 881</span>
               </div>
-              {/* Uncomment if you want to include address
               <div className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4 text-blue-400" />
-                <span className="text-gray-300">New York, NY</span>
+                <span className="text-gray-300">Dhaka, Bangladesh</span>
               </div>
-              */}
             </div>
           </div>
         </div>
