@@ -15,7 +15,9 @@ const getAspectRatio = (project: Project): string => {
     306: '1 / 1', // Study Abroad
     5: '16 / 9' ,// Packaging Design
     501: '15 / 9' ,// Packaging Design
-    502: '6 / 4' // Packaging Design
+    502: '6 / 4' ,// Packaging Design
+    6: '4 / 3', // T-Shirt
+    601: '4 / 3', // T-Shirt
 
   };
 
@@ -57,6 +59,7 @@ const Portfolio = () => {
     { id: 'socialmedia', name: 'Social Media' },
     { id: 'print', name: 'Print Design' },
     { id: 'packaging', name: 'Packaging' },
+    { id: 'tshirt', name: 'T-Shirt' },
   ];
 
   const projects: Project[] = [
@@ -191,6 +194,9 @@ const Portfolio = () => {
       description: "From breathtaking destinations to boutique hotels, our social media designs showcase the best of travel. We help you build a captivating online presence that drives bookings and grows your brand",
       cardImage: 'https://i.ibb.co/67GB4GQ5/Image-2e3uvf2e3uvf2e3u.png',
       modalImages: [
+        'https://i.ibb.co/4RxpQWRQ/image.png',
+        'https://i.ibb.co/6RH0km8J/image.png',
+        'https://i.ibb.co/JWVGzmS4/image.png',
         'https://i.ibb.co/0jQNP4PX/adf.png',
         'https://i.ibb.co/5hHMh3Z7/asdf.png',
       ]
@@ -255,6 +261,111 @@ const Portfolio = () => {
         'https://i.ibb.co/kV9D4S06/Package-Box-02-579-min.png',
         'https://i.ibb.co/C5H2Vgdd/X-NG-NANO-min.png',
         'https://i.ibb.co/KzxSyh87/Box-Vol-1-Top-2-min.jpg',
+      ]
+    },
+
+
+    /////T-Shirt
+    {
+      id: 6,
+      title: 'T-Shirt Design',
+      category: 'tshirt',
+      description: "More than just a T-shirt, it's a statement. Our collection of graphic tees is designed for self-expression. Find the design that speaks to you and wear your story.",
+      cardImage: 'https://i.ibb.co/SX11406F/unnamed-1.png',
+      modalImages: [
+        'https://i.ibb.co/twNq2VX4/Whats-App-Image-2025-04-14-at-18-05-26-0b95d56b.jpg',
+        'https://i.ibb.co/1Dj9DQc/Whats-App-Image-2025-04-14-at-18-50-35-ae6747ca.jpg',
+        'https://i.ibb.co/Fdq4PrV/Whats-App-Image-2025-04-14-at-22-03-33-ef467b65.jpg',
+        'https://i.ibb.co/5xGVQkQp/Whats-App-Image-2025-04-15-at-00-30-24-3c435498.jpg',
+        'https://i.ibb.co/b5bwrQs5/Whats-App-Image-2025-04-15-at-10-57-39-4ecf683d.jpg',
+        'https://i.ibb.co/Zpstt5Bn/Whats-App-Image-2025-04-15-at-10-57-39-174a4336.jpg',
+        'https://i.ibb.co/r2r57xpC/Whats-App-Image-2025-04-15-at-10-57-39-cefea9d2.jpg',
+        'https://i.ibb.co/XkKDg4sK/Whats-App-Image-2025-04-15-at-15-58-37-0195ca34.jpg',
+        'https://i.ibb.co/39GvwrBb/Whats-App-Image-2025-04-15-at-15-58-37-99925724.jpg',
+        'https://i.ibb.co/DDw1j616/Whats-App-Image-2025-04-15-at-15-58-38-664bff19.jpg',
+        'https://i.ibb.co/pjrW9qH2/Whats-App-Image-2025-04-15-at-15-58-38-798acd61.jpg',
+        'https://i.ibb.co/zVFvWpPf/Whats-App-Image-2025-04-15-at-15-58-38-dc9a1872.jpg',
+        'https://i.ibb.co/WNdmyhdF/Whats-App-Image-2025-04-16-at-01-45-10-616adbc5.jpg',
+        'https://i.ibb.co/pjZGT3SX/Whats-App-Image-2025-04-16-at-01-45-10-a7ae5978.jpg',
+        'https://i.ibb.co/d0KrWsx0/Whats-App-Image-2025-04-27-at-15-48-54-bf32f275.jpg',
+        'https://i.ibb.co/PZvhHq2q/Whats-App-Image-2025-04-27-at-15-48-54-e5a8e935.jpg',
+        'https://i.ibb.co/39sFvymt/Whats-App-Image-2025-04-28-at-19-12-14-bddc97dc.jpg',
+        'https://i.ibb.co/20CnvsDM/Whats-App-Image-2025-05-09-at-18-42-05-827df233.jpg',
+        'https://i.ibb.co/YBh7Ypz9/Whats-App-Image-2025-05-09-at-18-42-06-b2cd8d5e.jpg',
+        'https://i.ibb.co/cSMzrWMT/Whats-App-Image-2025-05-09-at-18-42-07-da993a17.jpg',
+        'https://i.ibb.co/7JRczFSN/Whats-App-Image-2025-05-09-at-18-42-11-3d32c0b8.jpg',
+        'https://i.ibb.co/V0GG0BbZ/Whats-App-Image-2025-05-09-at-18-42-12-414a6ed4.jpg',
+        'https://i.ibb.co/VcffDBFx/Whats-App-Image-2025-05-09-at-18-42-12-f920e44e.jpg',
+        'https://i.ibb.co/zVZ2JBrm/0f1bf2d9-da44-4fc7-856c-91944fef271a.jpg',
+        'https://i.ibb.co/RpRYTqwp/7ac8f46f-6107-4213-9a5b-eef9dd7c0c4f.jpg',
+        'https://i.ibb.co/LhnxqKJp/8b10ec8b-4a0b-48fd-a33a-a6d538cb675f.jpg',
+        'https://i.ibb.co/23V0YdkN/19ad8543-7146-453f-8365-6dfc0094a6af.jpg',
+        'https://i.ibb.co/rRfsCrRV/74e03a0e-a140-4556-b3aa-76c8425de052.jpg',
+        'https://i.ibb.co/GvyXx013/82a36aa2-e70b-4be8-877e-43ae3b5bf6a3.jpg',
+        'https://i.ibb.co/CKrB89s3/640635de-f159-4cf9-a404-14b549157dd8.jpg',
+        'https://i.ibb.co/WN1Ls5qv/85143516-084e-4abf-b8bf-c0cd3eddec97.jpg',
+        'https://i.ibb.co/60QdQ0qB/dd3ba631-6398-46d2-87b8-8feae7007de1.jpg',
+        'https://i.ibb.co/nZxTpCL/download-2.jpg',
+        'https://i.ibb.co/mCt1yhgc/download-4.jpg',
+        'https://i.ibb.co/WWNj40Cv/e3edfe04-ecbf-4d04-9b0c-1d0b23ea6012.jpg',
+
+      ]
+    },
+    {
+      id: 601,
+      title: 'T-Shirt Design',
+      category: 'tshirt',
+      description: "Authentic Designs for True Fans. We specialize in creating powerful, anime-inspired graphics that resonate deeply with the culture. Attract a dedicated fanbase and boost your brand with designs that honor their favorite characters and stories.",
+      cardImage: 'https://i.ibb.co/MxgxLLH2/dfssas.png',
+      modalImages: [
+        'https://i.ibb.co/QFhwgqWs/fjty.jpg',
+        'https://i.ibb.co/q3gMdQHN/fkjl.jpg',
+        'https://i.ibb.co/tpV3Tw06/fujko.jpg',
+        'https://i.ibb.co/W4zzG18K/gfb.jpg',
+        'https://i.ibb.co/WvZCtMp8/gghgh.jpg',
+        'https://i.ibb.co/3m2VGBFs/ghjkuyh.jpg',
+        'https://i.ibb.co/5qyDtkj/ghjy.jpg',
+        'https://i.ibb.co/k6HX0gqH/ghk.jpg',
+        'https://i.ibb.co/xSFBFCt2/goju-saturo-black-mockup.png',
+        'https://i.ibb.co/27gt5hSc/goju-t-shirt-mockup.png',
+        'https://i.ibb.co/PsXDVHtY/goku-mockup-design.png',
+        'https://i.ibb.co/v6CYb9Cp/hjkjk.jpg',
+        'https://i.ibb.co/Pv4Syv9M/hlii.jpg',
+        'https://i.ibb.co/vxmm3ZvB/huolhu.jpg',
+        'https://i.ibb.co/5hVnLGyk/ik-l.jpg',
+        'https://i.ibb.co/n8z2xPPk/itachi-T-Shirt-Mockups-1.png',
+        'https://i.ibb.co/HDY5vvmw/itachi-T-Shirt-Mockups.png',
+        'https://i.ibb.co/YBpTCVzW/jghjty.jpg',
+        'https://i.ibb.co/SXZ49rNR/jgj.jpg',
+        'https://i.ibb.co/fYWFZxZj/jh-j.jpg',
+        'https://i.ibb.co/BHHwj237/jhkj.jpg',
+        'https://i.ibb.co/Kj9tNJHJ/ji.jpg',
+        'https://i.ibb.co/RkFrh7FT/jio.jpg',
+        'https://i.ibb.co/HDxqXDvZ/jjk-ol.jpg',
+        'https://i.ibb.co/bMvhfWLM/jjl.jpg',
+        'https://i.ibb.co/Nd2s8KhK/jlu.jpg',
+        'https://i.ibb.co/XfmGqSdP/jyjy.jpg',
+        'https://i.ibb.co/BVSCPvcW/l-luik.jpg',
+        'https://i.ibb.co/k2VtbMQ6/lguyol.jpg',
+        'https://i.ibb.co/CFC7TMh/lgyol.jpg',
+        'https://i.ibb.co/8nKnSQWq/naruto-black.jpg',
+        'https://i.ibb.co/KpCcBwgj/naruto-mockup.jpg',
+        'https://i.ibb.co/cXhwDLXn/naruto-mockup.png',
+        'https://i.ibb.co/Fqjz8dS6/ngjhngh.jpg',
+        'https://i.ibb.co/GQNVbQxm/njtfhg.jpg',
+        'https://i.ibb.co/RTbLP69z/Oversize-T-Shirt-Mockups-1.png',
+        'https://i.ibb.co/8LDn1DrJ/Oversize-T-Shirt-Mockups-2.png',
+        'https://i.ibb.co/cKM1LJrB/Oversize-T-Shirt-Mockups-12.jpg',
+        'https://i.ibb.co/JW5yjTV6/Oversize-T-Shirt-Mockups-23.jpg',
+        'https://i.ibb.co/SXGJcs5r/Oversize-T-Shirt-Mockups-dfg.jpg',
+        'https://i.ibb.co/DPfqDGBy/Oversize-T-Shirt-Mockups.jpg',
+        'https://i.ibb.co/dsrc6JfG/sgm.jpg',
+        'https://i.ibb.co/Zpc2P46v/tdrjjtj.jpg',
+        'https://i.ibb.co/zhBzGbZs/tittan-t-shirt-mockup.png',
+        'https://i.ibb.co/h11bxbjK/123.jpg',
+        'https://i.ibb.co/Pz59DQYv/attack-on-1-moc.png',
+        'https://i.ibb.co/b5PzX8qw/edrhe.jpg',
+
       ]
     },
   ];
