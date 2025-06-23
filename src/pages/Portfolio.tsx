@@ -118,7 +118,7 @@ const Portfolio = () => {
       id: 307,
       title: 'Social Media Design',
       category: 'socialmedia',
-      description: "Begin your global education journey with confidence. We design compelling social media campaigns and materials for study abroad programs that inspire students and connect them with world-class opportunities.",
+      description: "Stop the Scroll. We design stunning, on-brand social media content that captivates your audience and drives growth. From daily posts to full campaigns, let's make your brand unforgettable online.",
       cardImage: 'https://i.ibb.co/pvPDV9QB/Social-Media-Design.png',
       modalImages: [
         'https://i.ibb.co/B2S9rwjZ/Hello-5.png',
