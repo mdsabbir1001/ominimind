@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 const getAspectRatio = (project: Project): string => {
   // ID based specific ratio override
   const idBasedRatios: { [key: number]: string } = {
-    1: '16 / 9', // Branding
+    1: '9 / 16', // Branding
     2: '16 / 9', // Web Design
-    3: '3 / 4', // Food & Beverage
+    3: '2 / 3', // Food & Beverage
     330: '1 / 1', // Food & Beverage
     301: '1 / 1', // Product Ads
     302: '3 / 4', // Hoodie
@@ -13,6 +13,7 @@ const getAspectRatio = (project: Project): string => {
     304: '16 / 9', // YouTube Thumbnails
     305: '1 / 1', // Travel & Tourism
     306: '1 / 1', // Study Abroad
+    307: '1 / 1', // Social Media Design
     5: '16 / 9' ,// Packaging Design
     501: '15 / 9' ,// Packaging Design
     502: '6 / 4' ,// Packaging Design
@@ -65,16 +66,21 @@ const Portfolio = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: 'TechStart Brand Identity',
+      title: 'Logo & Branding',
       category: 'branding',
-      description: 'Complete brand identity design for a technology startup',
-      cardImage: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=600',
+      description: "Your Logo is Your First Impression. We design more than just logos; we build powerful, memorable brand identities that connect with your audience. Let's create the face of your business.",
+      cardImage: 'https://i.ibb.co/9kPXNDTw/Image-8wpabj8wpabj8wpa.png',
       modalImages: [
-        'https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/3184611/pexels-photo-3184611.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/3184611/pexels-photo-3184611.jpeg?auto=compress&cs=tinysrgb&w=600'
+        'https://i.ibb.co/3yVPDJ80/binary.jpg',
+        'https://i.ibb.co/LXC2Tksh/briklyn.jpg',
+        'https://i.ibb.co/k29SXX5H/button.jpg',
+        'https://i.ibb.co/84Rzj0nM/livery.jpg',
+        'https://i.ibb.co/LhpmdNXg/Rustic2.jpg',
+        'https://i.ibb.co/ZRbDVvDg/Shine.jpg',
+        'https://i.ibb.co/39DJr4zS/tiny.jpg',
+        'https://i.ibb.co/qFJP6Vqb/Vellon.jpg',
+        'https://i.ibb.co/6cnCLmcz/viana2.jpg',
+        'https://i.ibb.co/fVxdQgxQ/arcode.jpg',
       ]
     },
     {
@@ -82,13 +88,8 @@ const Portfolio = () => {
       title: 'GreenEarth Website',
       category: 'web',
       description: 'Responsive website design for environmental consulting firm',
-      cardImage: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
+      cardImage: 'https://i.ibb.co/3mcRLqgm/Blank.png',
       modalImages: [
-        'https://images.pexels.com/photos/1367276/pexels-photo-1367276.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/1367276/pexels-photo-1367276.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=600'
       ]
     },
     ///// Start Social Media
@@ -99,6 +100,12 @@ const Portfolio = () => {
       description: "Custom design solutions for your restaurant or food brand. We capture the taste and quality of your offerings through stunning visuals that attract customers and boost sales. From social media to packaging, we've got you covered.",
       cardImage: 'https://i.ibb.co/939qFb8Z/unnamed.png',
       modalImages: [
+        'https://i.ibb.co/G4v7XK7s/Red-Modern-Delicious-Burger-Sale-Poster-2.png',
+        'https://i.ibb.co/vvXpV9zX/Red-Modern-Delicious-Burger-Sale-Poster-4.png',
+        'https://i.ibb.co/JW0gd9vH/3.png',
+        'https://i.ibb.co/kLTj5Wc/4.png',
+        'https://i.ibb.co/Z69XrQCZ/5.png',
+        'https://i.ibb.co/99LWr50C/oiup.png',
         'https://i.ibb.co/Kx3mwYQW/FOOD-MANU-1.png',
         'https://i.ibb.co/G4dRZvrY/FOOD-MANU-2.png',
         'https://i.ibb.co/yn0YSk9K/FOOD-MANU-4.png',
@@ -108,12 +115,33 @@ const Portfolio = () => {
       ]
     },
     {
+      id: 307,
+      title: 'Social Media Design',
+      category: 'socialmedia',
+      description: "Begin your global education journey with confidence. We design compelling social media campaigns and materials for study abroad programs that inspire students and connect them with world-class opportunities.",
+      cardImage: 'https://i.ibb.co/pvPDV9QB/Social-Media-Design.png',
+      modalImages: [
+        'https://i.ibb.co/B2S9rwjZ/Hello-5.png',
+        'https://i.ibb.co/DPx5WDjy/Hello-6.png',
+        'https://i.ibb.co/Z07Nc6j/hh.png',
+        'https://i.ibb.co/Lht1N12D/BDFGDFG.png',
+        'https://i.ibb.co/j9Ccd50W/fgedfge.png'
+      ]
+    },
+    {
       id: 330,
       title: 'Food & Beverage',
       category: 'socialmedia',
       description: "Custom design solutions for your restaurant or food brand. We capture the taste and quality of your offerings through stunning visuals that attract customers and boost sales. From social media to packaging, we've got you covered.",
       cardImage: 'https://i.ibb.co/N6KRw9hp/image.png',
       modalImages: [
+        'https://i.ibb.co/9k4VBkG4/Hello-12.png',
+        'https://i.ibb.co/dNnbJ84/DEl-1.jpg',
+        'https://i.ibb.co/8LhRzTbj/DEl-2.jpg',
+        'https://i.ibb.co/zHNMbTMm/DEl-3.jpg',
+        'https://i.ibb.co/ksGY6bgZ/DEl-4.jpg',
+        'https://i.ibb.co/F4WY6rtW/DEl.jpg',
+        'https://i.ibb.co/MD18RSSH/Hello-1.png',
         'https://i.ibb.co/pjQP0jC2/Burger.png',
         'https://i.ibb.co/LDVyj1Sz/Burger-112.jpg',
         'https://i.ibb.co/N6KRw9hp/image.png',
@@ -175,6 +203,8 @@ const Portfolio = () => {
       description: "our video's first impression matters. We create professional, high-quality YouTube thumbnails designed to stop the scroll, spark curiosity, and dramatically increase your views.",
       cardImage: 'https://i.ibb.co/FTL45W0/kwuasokwuasokwua.png',
       modalImages: [
+        'https://i.ibb.co/JwkV4kd1/12.png',
+        'https://i.ibb.co/XrcYn3nd/gjty.jpg',
         'https://i.ibb.co/prP96NBh/Ai-Youtube-Thambnail.png',
         'https://i.ibb.co/8nqHXb9v/8874d8205922893-66c404eb92232.jpg',
         'https://i.ibb.co/xtD41Tt5/image.png',

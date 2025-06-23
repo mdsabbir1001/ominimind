@@ -46,7 +46,7 @@ const Team = () => {
     {
       name: 'Istrat Jahan',
       role: 'Brand Identity Designer',
-      image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://i.ibb.co/XfLn4C58/20250623-165058.png',
       bio: "Creates meaningful brand visuals including logos, typography, and brand kits that reflect the brand's voice.",
       skills: ['Logo Design', 'Brand Guideline', 'Typography Selection'],
       icon: Palette,
