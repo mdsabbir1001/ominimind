@@ -89,17 +89,17 @@ const Home = () => {
               {
                 title: 'Brand Identity',
                 description: 'Complete branding solutions including logos, business cards, and brand guidelines.',
-                image: 'https://i.ibb.co/WvhbTsG9/Branding.png',
+                image: 'https://ik.imagekit.io/minimind/Cover/logo%20and%20brand%20indentity.png?updatedAt=1750792615083',
               },
               {
                 title: 'Social Media Design',
                 description: 'Elevate your brand with stunning, custom social media visuals. We design a professional identity that builds trust and creates a lasting impression.',
-                image: 'https://i.ibb.co/tPx5t0rv/Social-Media.png',
+                image: 'https://ik.imagekit.io/minimind/Cover/image(1).png?updatedAt=1750793675001',
               },
               {
                 title: 'Marketing & Print Materials',
                 description: 'Impactful print designs that clearly communicate your message. From informative brochures to action-driven flyers, we create materials that help grow your business.',
-                image: 'https://i.ibb.co/rf1js7GX/Marketing-Print-Materials.png',
+                image: 'https://ik.imagekit.io/minimind/Cover/Marketing%20&%20Print%20Materials.png?updatedAt=1750792615429',
               },
             ].map((service, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
