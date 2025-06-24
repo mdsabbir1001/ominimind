@@ -116,11 +116,15 @@ const Portfolio = () => {
       description: "Stop the Scroll. We design stunning, on-brand social media content that captivates your audience and drives growth. From daily posts to full campaigns, let's make your brand unforgettable online.",
       cardImage: 'https://ik.imagekit.io/minimind/Cover/Social%20Media%20Design.png?updatedAt=1750792614526',
       modalImages: [
-        'https://i.ibb.co/B2S9rwjZ/Hello-5.png',
-        'https://i.ibb.co/DPx5WDjy/Hello-6.png',
-        'https://i.ibb.co/Z07Nc6j/hh.png',
-        'https://i.ibb.co/Lht1N12D/BDFGDFG.png',
-        'https://i.ibb.co/j9Ccd50W/fgedfge.png'
+        'https://ik.imagekit.io/minimind/Study%20Abroad/T-shirt-d.png?updatedAt=1750803111214',
+        'https://ik.imagekit.io/minimind/Study%20Abroad/T-shirt-00.png?updatedAt=1750803110219',
+        'https://ik.imagekit.io/minimind/Social%20Media/mobile-tech-ads-design.jpg?updatedAt=1750806109042',
+        'https://ik.imagekit.io/minimind/Social%20Media/image.png?updatedAt=1750806415519',
+        'https://ik.imagekit.io/minimind/Study%20Abroad/image.png?updatedAt=1750803109890',
+        'https://ik.imagekit.io/minimind/Social%20Media/mobile-ad-design-ipone.jpg?updatedAt=1750806108915',
+        'https://ik.imagekit.io/minimind/Social%20Media/monile-ad-design.jpg?updatedAt=1750806108772',
+        'https://ik.imagekit.io/minimind/Social%20Media/manipulation-Recovered.png?updatedAt=1750806118572',
+        'https://ik.imagekit.io/minimind/Study%20Abroad/image(1).png?updatedAt=1750803110198',
       ]
     },
     {
@@ -128,7 +132,7 @@ const Portfolio = () => {
       title: 'Food & Beverage',
       category: 'socialmedia',
       description: "Custom design solutions for your restaurant or food brand. We capture the taste and quality of your offerings through stunning visuals that attract customers and boost sales. From social media to packaging, we've got you covered.",
-      cardImage: 'https://i.ibb.co/N6KRw9hp/image.png',
+      cardImage: 'https://ik.imagekit.io/minimind/Food%20&%20Beverage%20Squire/DEl.jpg?updatedAt=1750793908540',
       modalImages: [
         'https://ik.imagekit.io/minimind/Food%20&%20Beverage%20Squire/Hello%20(1).png?updatedAt=1750793910083',
         'https://ik.imagekit.io/minimind/Food%20&%20Beverage%20Squire/Hello%20(12).png?updatedAt=1750793908839',
@@ -137,23 +141,29 @@ const Portfolio = () => {
         'https://ik.imagekit.io/minimind/Food%20&%20Beverage%20Squire/DEl%20(2).jpg?updatedAt=1750793908201',
         'https://ik.imagekit.io/minimind/Food%20&%20Beverage%20Squire/DEl%20(4).jpg?updatedAt=1750793908198',
         'https://ik.imagekit.io/minimind/Food%20&%20Beverage%20Squire/DEl%20(1).jpg?updatedAt=1750793907942',
+        'https://ik.imagekit.io/minimind/Food%20&%20Beverage%20Squire/image.png?updatedAt=1750802712502',
+        'https://ik.imagekit.io/minimind/Food%20&%20Beverage%20Squire/image(4).png?updatedAt=1750802712450',
+        'https://ik.imagekit.io/minimind/Food%20&%20Beverage%20Squire/image(3).png?updatedAt=1750802712217',
+        'https://ik.imagekit.io/minimind/Food%20&%20Beverage%20Squire/image(1).png?updatedAt=1750802712142',
+        'https://ik.imagekit.io/minimind/Food%20&%20Beverage%20Squire/image(2).png?updatedAt=1750802711901',
       ]
     },
     {
       id: 301,
-      title: 'Product Ads',
+      title: 'Advertisement Design',
       category: 'socialmedia',
       description: "Stop the scroll and capture your audience. We create social media ads that don't just look beautiful - they deliver your brand's message clearly and are built to drive sales. Let our designs make your next campaign a success.",
       cardImage: 'https://ik.imagekit.io/minimind/Cover/Gemini_Generated_Image_avrlr2avrlr2avrl.png?updatedAt=1750792621468',
       modalImages: [
-        'https://i.ibb.co/21KG4PfP/mobile-tech-ads-design.jpg',
-        'https://i.ibb.co/Mk7FXNg5/5.png',
-        'https://i.ibb.co/pDjC7mL/monile-ad-design.jpg',
-        'https://i.ibb.co/mrRGHZQS/4.png',
-        'https://i.ibb.co/1JpCmjgL/mobile-ad-design-ipone.jpg',
-        'https://i.ibb.co/hw9MJ2x/no-1-edit.jpg',
-        'https://i.ibb.co/39n1cPS8/2.png',
-        'https://i.ibb.co/p6CNN13D/Untitled-2.png',
+        'https://ik.imagekit.io/minimind/Ads/2.png?updatedAt=1750805483741',
+        'https://ik.imagekit.io/minimind/Ads/5.png?updatedAt=1750805483542',
+        'https://ik.imagekit.io/minimind/Ads/Untitled-2.png?updatedAt=1750805483450',
+        'https://ik.imagekit.io/minimind/Ads/4.png?updatedAt=1750805482970',
+        'https://ik.imagekit.io/minimind/Ads/4.png?updatedAt=1750805482970',
+        'https://ik.imagekit.io/minimind/Ads/Social-media-Marketing-Banner.png?updatedAt=1750805483062',
+        'https://ik.imagekit.io/minimind/Ads/a1.png?updatedAt=1750805483045',
+        'https://ik.imagekit.io/minimind/Ads/6.png?updatedAt=1750805483321',
+        'https://ik.imagekit.io/minimind/Ads/EMI.png?updatedAt=1750805483099',
       ]
     },
     {
@@ -163,12 +173,12 @@ const Portfolio = () => {
       description: "Sell more than just hoodies! sell a lifestyle. Our social media designs for fashion brands create a powerful online presence, turning followers into loyal customers.",
       cardImage: 'https://ik.imagekit.io/minimind/Cover/Image_tv8u5htv8u5htv8u%20(Small).png?updatedAt=1750792615056',
       modalImages: [
-        'https://i.ibb.co/CK9q0tRp/hoodei-design-1.jpg',
-        'https://i.ibb.co/MkhDC2Q1/hoodei-design-2.jpg',
-        'https://i.ibb.co/hRHNVZzq/hoodie-4.jpg',
-        'https://i.ibb.co/kg6jdttj/hoodie-new-2.jpg',
-        'https://i.ibb.co/zHQGDjTn/hoodie-new.jpg',
-        'https://i.ibb.co/9BXSLKw/hoodie-3.png',
+        'https://ik.imagekit.io/minimind/Hoodie/hoodei-design-2.jpg?updatedAt=1750804620314',
+        'https://ik.imagekit.io/minimind/Hoodie/hoodei-design-1.jpg?updatedAt=1750804620290',
+        'https://ik.imagekit.io/minimind/Hoodie/hoodie-new.jpg?updatedAt=1750804620270',
+        'https://ik.imagekit.io/minimind/Hoodie/hoodie-new-2.jpg?updatedAt=1750804620211',
+        'https://ik.imagekit.io/minimind/Hoodie/hoodie-4.jpg?updatedAt=1750804620229',
+        'https://ik.imagekit.io/minimind/Hoodie/hoodie-3.png?updatedAt=1750804620112',
       ]
     },
     {
@@ -178,10 +188,10 @@ const Portfolio = () => {
       description: "Elevate your real estate brand's online presence with our stunning social media designs. We create visually appealing covers and ads that capture attention and drive engagement for your property listings and company.",
       cardImage: 'https://ik.imagekit.io/minimind/Cover/Image_im3av1im3av1im3a.png?updatedAt=1750792622374',
       modalImages: [
-        'https://i.ibb.co/6RPtTynV/real-state-design-4.jpg',
-        'https://i.ibb.co/Gf1Jrdxq/e390c9215329117-676953272217e.jpg',
-        'https://i.ibb.co/LzyLSgqN/real-estate-3.jpg',
-        'https://i.ibb.co/LXXxGd7T/real-estate-design.jpg',
+        'https://ik.imagekit.io/minimind/Real%20Estate/e390c9215329117-676953272217e.jpg?updatedAt=1750805156663',
+        'https://ik.imagekit.io/minimind/Real%20Estate/real-state-design-4.jpg?updatedAt=1750805156527',
+        'https://ik.imagekit.io/minimind/Real%20Estate/real-estate-design.jpg?updatedAt=1750805156478',
+        'https://ik.imagekit.io/minimind/Real%20Estate/real-estate-3.jpg?updatedAt=1750805156415',
       ]
     },
     {
@@ -191,18 +201,19 @@ const Portfolio = () => {
       description: "our video's first impression matters. We create professional, high-quality YouTube thumbnails designed to stop the scroll, spark curiosity, and dramatically increase your views.",
       cardImage: 'https://ik.imagekit.io/minimind/Cover/kwuasokwuasokwua.png?updatedAt=1750792615437',
       modalImages: [
-        'https://i.ibb.co/JwkV4kd1/12.png',
-        'https://i.ibb.co/XrcYn3nd/gjty.jpg',
-        'https://i.ibb.co/prP96NBh/Ai-Youtube-Thambnail.png',
-        'https://i.ibb.co/8nqHXb9v/8874d8205922893-66c404eb92232.jpg',
-        'https://i.ibb.co/xtD41Tt5/image.png',
-        'https://i.ibb.co/LdMSRd3s/e67dda205922893-66c404eb91d53.jpg',
-        'https://i.ibb.co/rRMN9Ljw/image.png',
-        'https://i.ibb.co/LXqp25Z9/image.png',
-        'https://i.ibb.co/V0BzBgSJ/image.png',
-        'https://i.ibb.co/4kdBvzV/image.png',
-        'https://i.ibb.co/jPH2ZDCG/496943370-643749558620057-1703896485107095177-n.jpg',
-        'https://i.ibb.co/KjQ27Bnv/tgjjgj.jpg',
+        'https://ik.imagekit.io/minimind/Youtube%20Thumbnail/image.png?updatedAt=1750804101184',
+        'https://ik.imagekit.io/minimind/Youtube%20Thumbnail/image(2).png?updatedAt=1750804100537',
+        'https://ik.imagekit.io/minimind/Youtube%20Thumbnail/image(10).png?updatedAt=1750804106012',
+        'https://ik.imagekit.io/minimind/Youtube%20Thumbnail/image.png?updatedAt=1750806305175',
+        'https://ik.imagekit.io/minimind/Youtube%20Thumbnail/image(3).png?updatedAt=1750804101522',
+        'https://ik.imagekit.io/minimind/Youtube%20Thumbnail/image(1).png?updatedAt=1750804101031',
+        'https://ik.imagekit.io/minimind/Youtube%20Thumbnail/image(4).png?updatedAt=1750804101292',
+        'https://ik.imagekit.io/minimind/Youtube%20Thumbnail/image(6).png?updatedAt=1750804100817',
+        'https://ik.imagekit.io/minimind/Youtube%20Thumbnail/image(9).png?updatedAt=1750804100689',
+        'https://ik.imagekit.io/minimind/Youtube%20Thumbnail/image(8).png?updatedAt=1750804099516',
+        'https://ik.imagekit.io/minimind/Youtube%20Thumbnail/image(5).png?updatedAt=1750804100667',
+        'https://ik.imagekit.io/minimind/Youtube%20Thumbnail/image(11).png?updatedAt=1750804106358',
+        'https://ik.imagekit.io/minimind/Youtube%20Thumbnail/image(7).png?updatedAt=1750804099596',
       ]
     },
     {
@@ -212,11 +223,11 @@ const Portfolio = () => {
       description: "From breathtaking destinations to boutique hotels, our social media designs showcase the best of travel. We help you build a captivating online presence that drives bookings and grows your brand",
       cardImage: 'https://ik.imagekit.io/minimind/Cover/Image_2e3uvf2e3uvf2e3u.png?updatedAt=1750792621829',
       modalImages: [
-        'https://i.ibb.co/4RxpQWRQ/image.png',
-        'https://i.ibb.co/6RH0km8J/image.png',
-        'https://i.ibb.co/JWVGzmS4/image.png',
-        'https://i.ibb.co/0jQNP4PX/adf.png',
-        'https://i.ibb.co/5hHMh3Z7/asdf.png',
+        'https://ik.imagekit.io/minimind/Travel/image1.png?updatedAt=1750805903253',
+        'https://ik.imagekit.io/minimind/Travel/adf.png?updatedAt=1750805903196',
+        'https://ik.imagekit.io/minimind/Travel/image.png?updatedAt=1750805902987',
+        'https://ik.imagekit.io/minimind/Travel/travel-2.jpg?updatedAt=1750805902689',
+        'https://ik.imagekit.io/minimind/Travel/image%20(1).png?updatedAt=1750805902616',
       ]
     },
     {
@@ -226,10 +237,10 @@ const Portfolio = () => {
       description: "Begin your global education journey with confidence. We design compelling social media campaigns and materials for study abroad programs that inspire students and connect them with world-class opportunities.",
       cardImage: 'https://ik.imagekit.io/minimind/Cover/Planning-to-study-abroad.jpg?updatedAt=1750792614719',
       modalImages: [
-        'https://i.ibb.co/YF92z8B3/sklkiefh.png',
-        'https://i.ibb.co/0yTpZqPz/agfag.png',
-        'https://i.ibb.co/tpY34RwS/5.png',
-        'https://i.ibb.co/xpMYzp6/AEU.png',
+        'https://ik.imagekit.io/minimind/Study%20Abroad/image(2).png?updatedAt=1750803672306',
+        'https://ik.imagekit.io/minimind/Study%20Abroad/image(1).png?updatedAt=1750803672942',
+        'https://ik.imagekit.io/minimind/Study%20Abroad/image.png?updatedAt=1750803671864',
+        'https://ik.imagekit.io/minimind/Study%20Abroad/image(3).png?updatedAt=1750803672554',
       ]
     },
     /////Social Media End
@@ -245,13 +256,13 @@ const Portfolio = () => {
       title: 'Packaging Design',
       category: 'packaging',
       description: "Creative and structural packaging design for beauty products. We craft unique boxes that not only protect the product but also tell a compelling brand story from the first glance.",
-      cardImage: 'https://i.ibb.co/vvXMZmWJ/mud-mask-box.jpg',
+      cardImage: 'https://ik.imagekit.io/minimind/Packaging%20Design/mud%20mask%20box.jpg?updatedAt=1750796431148',
       modalImages: [
-        'https://i.ibb.co/wNdvrFYC/5.png',
-        'https://i.ibb.co/23DWzQms/1.jpg',
-        'https://i.ibb.co/TMy9XGXW/2.jpg',
-        'https://i.ibb.co/CpNPyGCT/3.jpg',
-        'https://i.ibb.co/zWNTRjBy/4.jpg',
+        'https://ik.imagekit.io/minimind/Packaging%20Design/1.jpg?updatedAt=1750796430723',
+        'https://ik.imagekit.io/minimind/Packaging%20Design/1.jpg?updatedAt=1750796430723',
+        'https://ik.imagekit.io/minimind/Packaging%20Design/m003t0541_a_sachet_packets_31jul22.jpg?updatedAt=1750796430505',
+        'https://ik.imagekit.io/minimind/Packaging%20Design/3.jpg?updatedAt=1750796430518',
+        'https://ik.imagekit.io/minimind/Packaging%20Design/4.jpg?updatedAt=1750796430507',
       ]
     },
     {
@@ -259,14 +270,14 @@ const Portfolio = () => {
       title: 'Packaging Design',
       category: 'packaging',
       description: "Clean and fresh packaging design for cosmetic and skincare brands. Our designs reflect the purity and quality of your natural ingredients, creating an irresistible appeal for customers.",
-      cardImage: 'https://i.ibb.co/Df0zJJg0/Essential-Oil-Dropper-Bottle-Mockup-min.jpg',
+      cardImage: 'https://ik.imagekit.io/minimind/Packaging%20Design/Essential%20Oil%20Dropper%20Bottle%20Mockup.jpg?updatedAt=1750796674196',
       modalImages: [
-        'https://i.ibb.co/sJHYjHNd/01-min.jpg',
-        'https://i.ibb.co/FfPfqsc/essential-3-jpg-min.jpg',
-        'https://i.ibb.co/Df0zJJg0/Essential-Oil-Dropper-Bottle-Mockup-min.jpg',
-        'https://i.ibb.co/GQCDfVf8/Essential-Oil-Bottle-Mockup-min.jpg',
-        'https://i.ibb.co/fVWYr2GW/Free-Dropper-Bottle-Mockup-3-min.jpg',
-        'https://i.ibb.co/Mx40XD06/mockup-essential-05-min.jpg',
+        'https://ik.imagekit.io/minimind/Packaging%20Design/01.jpg?updatedAt=1750796896192',
+        'https://ik.imagekit.io/minimind/Packaging%20Design/mockup%20essential%2005.jpg?updatedAt=1750796674171',
+        'https://ik.imagekit.io/minimind/Packaging%20Design/essential%203%20jpg.jpg?updatedAt=1750796674167',
+        'https://ik.imagekit.io/minimind/Packaging%20Design/Essential_Oil_Bottle_Mockup.jpg?updatedAt=1750796674382',
+        'https://ik.imagekit.io/minimind/Packaging%20Design/Two_Essential_Oil_Bottles_Mockup%204.jpg?updatedAt=1750796674652',
+        'https://ik.imagekit.io/minimind/Packaging%20Design/Free_Dropper_Bottle_Mockup%203.jpg?updatedAt=1750796673948',
       ]
     },
     {
@@ -274,11 +285,11 @@ const Portfolio = () => {
       title: 'Packaging Design',
       category: 'packaging',
       description: "Professional and trustworthy packaging for pharmaceutical and wellness products. We design clear, informative, and clean packaging that builds consumer confidence and communicates reliability.",
-      cardImage: 'https://i.ibb.co/kV9D4S06/Package-Box-02-579-min.png',
+      cardImage: 'https://ik.imagekit.io/minimind/Packaging%20Design/Box-Vol-1-Top-2.jpg?updatedAt=1750796982134',
       modalImages: [
-        'https://i.ibb.co/kV9D4S06/Package-Box-02-579-min.png',
-        'https://i.ibb.co/C5H2Vgdd/X-NG-NANO-min.png',
-        'https://i.ibb.co/KzxSyh87/Box-Vol-1-Top-2-min.jpg',
+        'https://ik.imagekit.io/minimind/Packaging%20Design/Package%20Box%2002.579.png?updatedAt=1750796982822',
+        'https://ik.imagekit.io/minimind/Packaging%20Design/X%C6%AF%C6%A0NG%20NANO.png?updatedAt=1750796982364',
+        'https://ik.imagekit.io/minimind/Packaging%20Design/Box-Vol-1-Top-2.jpg?updatedAt=1750796982134',
       ]
     },
 
