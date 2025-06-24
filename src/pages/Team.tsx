@@ -20,7 +20,7 @@ const Team = () => {
     {
       name: 'Sabbir',
       role: 'Team Lead | Creative Director',
-      image: 'https://i.ibb.co/sTxxJxL/Images.png',
+      image: 'https://ik.imagekit.io/minimind/Profile/Images.png?updatedAt=1750789972901',
       bio: 'Leads the vision, strategy, and design direction of the team. Bridges between client goals and creative execution.',
       skills: ['Brand Strategy', 'Creative Direction', 'Client Communication'],
       icon: Palette,
@@ -33,7 +33,7 @@ const Team = () => {
     {
       name: 'Ruhul Amin',
       role: 'Project Manager',
-      image: 'https://i.ibb.co/ZpvJ965H/Ruhul-amin.png',
+      image: 'https://ik.imagekit.io/minimind/Profile/Ruhul%20amin.png?updatedAt=1750789529764',
       bio: 'Manages project timelines, communicates with clients, and ensures the team delivers on time with quality.',
       skills: ['Project Coordination', 'Client Handling', 'Task Scheduling'],
       icon: Palette,
@@ -46,7 +46,7 @@ const Team = () => {
     {
       name: 'Istrat Jahan',
       role: 'Brand Identity Designer',
-      image: 'https://i.ibb.co/XfLn4C58/20250623-165058.png',
+      image: 'https://ik.imagekit.io/minimind/Profile/20250623_165058.png?updatedAt=1750789988653',
       bio: "Creates meaningful brand visuals including logos, typography, and brand kits that reflect the brand's voice.",
       skills: ['Logo Design', 'Brand Guideline', 'Typography Selection'],
       icon: Palette,
@@ -59,7 +59,7 @@ const Team = () => {
     {
       name: 'Medul Hasnat Muhib',
       role: 'Social Media Designer',
-      image: 'https://i.ibb.co/WpW8jJ3H/midul1.png',
+      image: 'https://ik.imagekit.io/minimind/Profile/midul1.png?updatedAt=1750789971737',
       bio: 'Designs social content that engages audiences and maintains brand consistency across platforms.',
       skills: ['Post Design', 'Instagram Reels Layouts', 'Facebook Ads'],
       icon: Palette,

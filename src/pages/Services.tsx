@@ -8,49 +8,49 @@ const Services = () => {
       title: 'Brand Identity Design',
       description: 'Complete brand identity packages including logos, color schemes, typography, and brand guidelines.',
       features: ['Logo Design', 'Brand Guidelines', 'Color Palette', 'Typography Selection', 'Business Cards', 'Letterheads'],
-      image: 'https://i.ibb.co/WvhbTsG9/Branding.png'
+      image: 'https://ik.imagekit.io/minimind/Cover/logo%20and%20brand%20indentity.png?updatedAt=1750792615083'
     },
     {
       icon: Monitor,
       title: 'Web Design',
       description: 'Modern, responsive websites that provide exceptional user experiences and drive conversions.',
       features: ['Responsive Design', 'UI/UX Design', 'Landing Pages', 'E-commerce Design', 'Web Applications', 'Prototyping'],
-      image: 'https://i.ibb.co/TD974qG3/Web-design.png0'
+      image: 'https://ik.imagekit.io/minimind/Cover/image.png?updatedAt=1750793541010'
     },
     {
       icon: Printer,
       title: 'Print Design',
       description: 'Professional print materials that make a lasting impression on your target audience.',
       features: ['Brochures', 'Flyers', 'Posters', 'Business Cards', 'Catalogs', 'Packaging Design'],
-      image: 'https://i.ibb.co/hFdX0z2x/Print-design.png'
+      image: 'https://ik.imagekit.io/minimind/Cover/Print%20desgn.png?updatedAt=1750792615731'
     },
     {
       icon: Video,
       title: 'Motion Graphics',
       description: 'Modern, responsive websites that provide exceptional user experiences and drive conversions.',
       features: ['Explainer Videos', 'Social Media Content', 'Website Animations', 'Presentations', 'Logo Animations', 'Animated Ads'],
-      image: 'https://i.ibb.co/KxDjJ2G2/Motion-Graphic.png'
+      image: 'https://ik.imagekit.io/minimind/Cover/motion%20graphic.png?updatedAt=1750792615939'
     },
     {
       icon: Package,
       title: 'Packaging Design',
       description: 'Eye-catching packaging designs that help your products stand out on the shelves.',
       features: ['Product Packaging', 'Label Design', '3D Mockups', 'Retail Packaging', 'Shipping Boxes', 'Brand Integration'],
-      image: 'https://i.ibb.co/BHjDy183/Packaging.png'
+      image: 'https://ik.imagekit.io/minimind/Cover/packaging.png?updatedAt=1750792615028'
     },
     {
       icon: Megaphone,
       title: 'Social Media Graphics',
       description: 'Engaging social media visuals that boost your online presence and engagement rates.',
       features: ['Instagram Posts', 'Facebook Covers', 'Twitter Headers', 'LinkedIn Banners', 'Story Templates', 'Ad Creatives'],
-      image: 'https://i.ibb.co/tPx5t0rv/Social-Media.png'
+      image: 'https://ik.imagekit.io/minimind/Cover/image(1).png?updatedAt=1750793675001'
     },
     {
       icon: Pen,
       title: 'Illustration',
       description: 'Custom illustrations that bring your ideas to life with unique artistic flair.',
       features: ['Digital Illustration', 'Character Design', 'Infographics', 'Editorial Illustration', 'Technical Drawings', 'Icon Design'],
-      image: 'https://i.ibb.co/QvhDH6mS/Illustrations.png'
+      image: 'https://ik.imagekit.io/minimind/Cover/Illustrator.png?updatedAt=1750792622515'
     },
     {
       icon: Camera,
