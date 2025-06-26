@@ -53,12 +53,13 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Column (Text and Buttons) */}
             <div>
-              <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-                Elevate Your Brand with
+                <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                Elevate Your Brand with{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
                   Minimind
                 </span>
-              </h1>
+                </h1>
+                <div className="mb-4"></div>
               <p className="text-xl mb-8 text-blue-100">
                 We specialize in creating stunning graphic designs for new businesses,
                 supporting marketing agencies, and generating innovative ideas that drive business expansion.
