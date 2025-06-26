@@ -1,25 +1,67 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react'; // Import useState and useEffect
 import { Link } from 'react-router-dom';
 import { ArrowRight, Users, Award, Sparkles } from 'lucide-react';
 
 const Home = () => {
+  // State to keep track of the current image index for the slider
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Array of image URLs for the slider
+  const heroImages = [
+    'https://ik.imagekit.io/minimind/Cover/Illustration.png?updatedAt=1750969715455',
+    'https://ik.imagekit.io/minimind/Cover/Motions.png?updatedAt=1750970380533',
+    'https://ik.imagekit.io/minimind/Cover/Social%20Media.png?updatedAt=1750969086377',
+    // Add more image URLs here
+  ];
+
+  // Effect to handle auto-sliding
+  useEffect(() => {
+    // Set up an interval to change the image index every 5 seconds
+    const intervalId = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        // Cycle back to the first image if we are at the last one
+        prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 7000); // Change image every 7 seconds (7000ms)
+
+    // Cleanup function to clear the interval when the component unmounts
+    return () => clearInterval(intervalId);
+  }, [heroImages.length]); // Re-run effect if the number of images changes
+
+
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-600 via-purple-600 to-purple-700 text-white">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+        {/* Background Image Slider */}
+        <div className="absolute inset-0">
+          {heroImages.map((image, index) => (
+            <img
+              key={index}
+              src={image}
+              alt={`Hero Background Image ${index + 1}`}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+                index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+              }`}
+            />
+          ))}
+           <div className="absolute inset-0 bg-black/50"></div> {/* Dark overlay */}
+        </div>
+
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 z-10"> {/* Added z-10 to bring content above images */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column (Text and Buttons) */}
             <div>
               <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-                Creative Design
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-pink-400">
-                  Solutions
+                Elevate Your Brand with
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                  Minimind
                 </span>
               </h1>
               <p className="text-xl mb-8 text-blue-100">
-                Transform your brand with our professional graphic design services. 
-                We create stunning visuals that capture your essence and drive results.
+                We specialize in creating stunning graphic designs for new businesses,
+                supporting marketing agencies, and generating innovative ideas that drive business expansion.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -37,15 +79,10 @@ const Home = () => {
                 </Link>
               </div>
             </div>
-            <div className="relative">
-              <img
-                src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Creative Design"
-                className="rounded-lg shadow-2xl"
-              />
-              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-yellow-400 rounded-full opacity-80"></div>
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-pink-400 rounded-full opacity-80"></div>
-            </div>
+            {/* Removed the right column content (static image/slider) */}
+             <div className="hidden lg:block">
+                {/* This column is now empty or can be used for other content if needed */}
+             </div>
           </div>
         </div>
       </section>
@@ -89,7 +126,7 @@ const Home = () => {
               {
                 title: 'Brand Identity',
                 description: 'Complete branding solutions including logos, business cards, and brand guidelines.',
-                image: 'https://ik.imagekit.io/minimind/Cover/logo%20and%20brand%20indentity.png?updatedAt=1750792615083',
+                image: 'https://ik.imagekit.io/minimind/Cover/logo%20and%20indentity.png?updatedAt=1750792615083',
               },
               {
                 title: 'Social Media Design',

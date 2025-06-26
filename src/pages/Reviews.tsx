@@ -59,10 +59,10 @@ const Reviews = () => {
   ];
 
   const stats = [
-    { number: '98%', label: 'Client Satisfaction' },
+    { number: '90%', label: 'Client Satisfaction' },
     { number: '0', label: 'Average Rating' },
     { number: '90%', label: 'Happy Clients' },
-    { number: '0%', label: 'Repeat Customers' }
+    { number: '90%', label: 'Repeat Customers' }
   ];
 
   const renderStars = (rating) => {

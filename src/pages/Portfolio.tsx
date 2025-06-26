@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react'; // Import useEffect and useRef
 // Function: ID
 const getAspectRatio = (project: Project): string => {
   // ID based specific ratio override
@@ -36,7 +36,7 @@ const getAspectRatio = (project: Project): string => {
   return idBasedRatios[project.id] || categoryBasedRatios[project.category] || '1 / 1';
 };
 
-import { ExternalLink, Eye, Filter, X } from 'lucide-react';
+import { ExternalLink, Eye, Filter, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 // Define a type for the project
 interface Project {
@@ -52,6 +52,11 @@ const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isFullScreenOpen, setIsFullScreenOpen] = useState(false); // State for full-screen preview
+  const [currentImageIndex, setCurrentImageIndex] = useState(0); // State for current image index in full-screen
+  const [showArrows, setShowArrows] = useState(true); // State to control arrow visibility
+  const arrowTimerRef = useRef<NodeJS.Timeout | null>(null); // Ref for the arrow hide timer
+  const touchStartX = useRef(0); // Ref to store touch start X coordinate
 
   const filters = [
     { id: 'all', name: 'All Projects' },
@@ -122,6 +127,9 @@ const Portfolio = () => {
         'https://ik.imagekit.io/minimind/Social%20Media/image.png?updatedAt=1750806415519',
         'https://ik.imagekit.io/minimind/Study%20Abroad/image.png?updatedAt=1750803109890',
         'https://ik.imagekit.io/minimind/Social%20Media/mobile-ad-design-ipone.jpg?updatedAt=1750806108915',
+        'https://ik.imagekit.io/minimind/Social%20Media/Offer..%20Working.png?updatedAt=1750866906842',
+        'https://ik.imagekit.io/minimind/Social%20Media/Car2.png?updatedAt=1750866907190',
+        'https://ik.imagekit.io/minimind/Social%20Media/car4.png?updatedAt=1750866907401',
         'https://ik.imagekit.io/minimind/Social%20Media/monile-ad-design.jpg?updatedAt=1750806108772',
         'https://ik.imagekit.io/minimind/Social%20Media/manipulation-Recovered.png?updatedAt=1750806118572',
         'https://ik.imagekit.io/minimind/Study%20Abroad/image(1).png?updatedAt=1750803110198',
@@ -414,12 +422,98 @@ const Portfolio = () => {
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedProject(null);
+    setIsFullScreenOpen(false); // Close full screen if open
+    setCurrentImageIndex(0); // Reset image index
+    if (arrowTimerRef.current) { // Clear timer on modal close
+      clearTimeout(arrowTimerRef.current);
+    }
   };
+
+  const openFullScreen = (index: number) => {
+    setCurrentImageIndex(index);
+    setIsFullScreenOpen(true);
+    setShowArrows(true); // Show arrows when full screen opens
+  };
+
+  const closeFullScreen = () => {
+    setIsFullScreenOpen(false);
+    if (arrowTimerRef.current) { // Clear timer on full screen close
+      clearTimeout(arrowTimerRef.current);
+    }
+  };
+
+  const goToPreviousImage = () => {
+    if (selectedProject) {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === 0 ? selectedProject.modalImages.length - 1 : prevIndex - 1
+      );
+      setShowArrows(true); // Show arrows on navigation
+    }
+  };
+
+  const goToNextImage = () => {
+    if (selectedProject) {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === selectedProject.modalImages.length - 1 ? 0 : prevIndex + 1
+      );
+      setShowArrows(true); // Show arrows on navigation
+    }
+  };
+
 
   // Function to handle right-click and prevent saving
   const handleContextMenu = (event: React.MouseEvent) => {
     event.preventDefault();
   };
+
+  // Handle touch start for swipe
+  const handleTouchStart = (event: React.TouchEvent) => {
+    touchStartX.current = event.touches[0].clientX;
+    setShowArrows(true); // Show arrows on touch
+  };
+
+  // Handle touch end for swipe
+  const handleTouchEnd = (event: React.TouchEvent) => {
+    if (!selectedProject) return;
+
+    const touchEndX = event.changedTouches[0].clientX;
+    const swipeThreshold = 50; // Minimum distance for a swipe
+
+    // Check if the touch started and ended on the image itself, not the buttons
+    const target = event.target as HTMLElement;
+    if (target.tagName === 'IMG' || target.classList.contains('relative')) { // Check if target is the image or the container div
+       if (touchStartX.current - touchEndX > swipeThreshold) {
+        // Swiped left
+        goToNextImage();
+      } else if (touchEndX - touchStartX.current > swipeThreshold) {
+        // Swiped right
+        goToPreviousImage();
+      } else {
+        // Tap - toggle arrows
+        setShowArrows(prev => !prev);
+      }
+    }
+  };
+
+  // Effect to hide arrows after a delay
+  useEffect(() => {
+    if (isFullScreenOpen && showArrows) {
+      if (arrowTimerRef.current) {
+        clearTimeout(arrowTimerRef.current);
+      }
+      arrowTimerRef.current = setTimeout(() => {
+        setShowArrows(false);
+      }, 1000); // Hide after 1 second
+    }
+
+    // Cleanup timer on component unmount or when dependencies change
+    return () => {
+      if (arrowTimerRef.current) {
+        clearTimeout(arrowTimerRef.current);
+      }
+    };
+  }, [isFullScreenOpen, showArrows, currentImageIndex]); // Re-run effect when these states change
+
 
   return (
     <div className="py-20">
@@ -534,10 +628,9 @@ const Portfolio = () => {
             </div>
 
             {/* Image Grid */}
-            {/* Image Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 overflow-y-auto h-[60vh]">
               {selectedProject.modalImages.map((image, index) => (
-                <div key={index} className="w-full">
+                <div key={index} className="w-full cursor-pointer" onClick={() => openFullScreen(index)}> {/* Added cursor-pointer and onClick */}
                   <div style={{ aspectRatio: getAspectRatio(selectedProject) }}>
                     <img
                       src={image}
@@ -552,6 +645,53 @@ const Portfolio = () => {
             </div>
 
 
+          </div>
+        </div>
+      )}
+
+      {/* Full Screen Image Preview Modal */}
+      {isFullScreenOpen && selectedProject && (
+        <div
+          className="fixed inset-0 bg-black/90 z-[60] flex items-center justify-center p-4"
+          onTouchStart={handleTouchStart} // Add touch start handler
+          onTouchEnd={handleTouchEnd} // Add touch end handler
+          onClick={() => setShowArrows(true)} // Show arrows on click anywhere in fullscreen
+        >
+          {/* Close Button */}
+          <button
+            onClick={closeFullScreen}
+            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10"
+          >
+            <X className="w-8 h-8" />
+          </button>
+
+          {/* Image */}
+          <div className="relative flex items-center justify-center w-full h-full">
+            <img
+              src={selectedProject.modalImages[currentImageIndex]}
+              alt={`${selectedProject.title} - ${currentImageIndex + 1}`}
+              className="max-w-full max-h-full object-contain" // Use object-contain to fit image
+              onContextMenu={handleContextMenu}
+              draggable="false"
+            />
+
+            {/* Navigation Buttons */}
+            {selectedProject.modalImages.length > 1 && (
+              <>
+                <button
+                  onClick={goToPreviousImage} // Removed e.stopPropagation()
+                  className={`absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full transition-opacity ${showArrows ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} // Control visibility and pointer events
+                >
+                  <ChevronLeft className="w-6 h-6" />
+                </button>
+                <button
+                  onClick={goToNextImage} // Removed e.stopPropagation()
+                  className={`absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full transition-opacity ${showArrows ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} // Control visibility and pointer events
+                >
+                  <ChevronRight className="w-6 h-6" />
+                </button>
+              </>
+            )}
           </div>
         </div>
       )}
