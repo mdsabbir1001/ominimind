@@ -126,7 +126,7 @@ const Home = () => {
               {
                 title: 'Brand Identity',
                 description: 'Complete branding solutions including logos, business cards, and brand guidelines.',
-                image: 'https://ik.imagekit.io/minimind/Cover/logo%20and%20indentity.png?updatedAt=1750792615083',
+                image: 'https://ik.imagekit.io/minimind/Cover/logo%20and%20brand%20indentity.png?updatedAt=1750792615083',
               },
               {
                 title: 'Social Media Design',
