@@ -10,10 +10,12 @@ import Team from './pages/Team';
 import Reviews from './pages/Reviews';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
+import ScrollToTop from './components/ScrollToTop'; // ScrollToTop কম্পোনেন্টটি ইম্পোর্ট করুন
 
 function App() {
   return (
     <Router>
+      <ScrollToTop /> {/* এখানে ScrollToTop কম্পোনেন্টটি যোগ করুন */}
       <div className="min-h-screen bg-white">
         <Navbar />
         <main>

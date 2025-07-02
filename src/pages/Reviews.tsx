@@ -3,6 +3,8 @@ import { Star, Quote, Building, User, X } from 'lucide-react'; // X আইকন
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { motion } from 'framer-motion'; // Import motion from framer-motion
+
 
 const Reviews = () => {
   // মোডাল নিয়ন্ত্রণের জন্য State এবং Handler ফাংশন
@@ -88,11 +90,29 @@ const Reviews = () => {
     ]
   };
 
+  // Define animation variants
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  };
+
+
   return (
-    <div className="py-20">
+    <div className="py-20 overflow-x-hidden"> {/* Added overflow-x-hidden */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <motion.div // Animate the Header
+          className="text-center mb-16"
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+        >
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Client <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Reviews</span>
           </h1>
@@ -102,53 +122,85 @@ const Reviews = () => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Don't just take our word for it. Here's what our clients have to say about working with us.
           </p>
-        </div>
+        </motion.div>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <motion.div // Animate the Stats Section container
+          className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
+          variants={sectionVariants} // Use section variants for the container
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
           {stats.map((stat, index) => (
-            <div key={index} className="text-center p-6 bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg">
+            <motion.div // Animate each stat item
+              key={index}
+              className="text-center p-6 bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg"
+              variants={itemVariants} // Use item variants
+              initial="hidden" // Explicitly set initial state
+              whileInView="visible" // Explicitly set whileInView state
+              viewport={{ once: true, amount: 0.3 }} // Trigger animation when 30% of item is visible
+              transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.1 }} // Add staggered delay
+            >
               <div className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</div>
               <div className="text-gray-600">{stat.label}</div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Reviews Slider */}
-        <Slider {...sliderSettings} className="mb-16">
-          {reviews.map((review, index) => (
-            <div key={index} className="p-4">
-              <div className="bg-white rounded-lg shadow-lg p-6 h-[420px] flex flex-col hover:shadow-xl transition-shadow">
-                <div className="flex items-start mb-4">
-                  <img src={review.image} alt={review.name} className="w-12 h-12 rounded-full object-cover mr-4" />
-                  <div className="flex-1">
-                    <h3 className="font-semibold text-gray-900">{review.name}</h3>
-                    <p className="text-sm text-gray-600">{review.role}</p>
-                    <div className="flex items-center mt-1">
-                      <Building className="w-4 h-4 text-gray-400 mr-1" />
-                      <span className="text-sm text-gray-600">{review.company}</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-center mb-3">{renderStars(review.rating)}</div>
-                <div className="mb-4 flex-grow">
-                  <Quote className="w-6 h-6 text-blue-600 mb-2" />
-                  <p className="text-gray-700 italic line-clamp-4">"{review.review}"</p>
-                </div>
-                <button 
-                  onClick={() => handleSeeMoreClick(review)}
-                  className="text-sm text-blue-600 font-semibold hover:underline self-start mb-4"
-                >
-                  See more...
-                </button>
-                <div className="border-t pt-3 mt-auto">
-                  <span className="text-sm text-blue-600 font-medium">Project: {review.project}</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </Slider>
-        
+        {/* Note: Animating the Slider component directly might have unexpected behavior.
+             We will animate the container around the slider and the individual slides. */}
+        <motion.div // Animate the container around the slider
+           variants={sectionVariants} // Use section variants for the container
+           initial="hidden"
+           whileInView="visible"
+           viewport={{ once: true, amount: 0.3 }}
+        >
+           <Slider {...sliderSettings} className="mb-16">
+             {reviews.map((review, index) => (
+               <motion.div // Animate each review slide/card
+                 key={index}
+                 className="p-4"
+                 variants={itemVariants} // Use item variants
+                 initial="hidden" // Explicitly set initial state
+                 whileInView="visible" // Explicitly set whileInView state
+                 viewport={{ once: true, amount: 0.3 }} // Trigger animation when 30% of item is visible
+                 transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.1 }} // Add staggered delay
+               >
+                 <div className="bg-white rounded-lg shadow-lg p-6 h-[420px] flex flex-col hover:shadow-xl transition-shadow">
+                   <div className="flex items-start mb-4">
+                     <img src={review.image} alt={review.name} className="w-12 h-12 rounded-full object-cover mr-4" />
+                     <div className="flex-1">
+                       <h3 className="font-semibold text-gray-900">{review.name}</h3>
+                       <p className="text-sm text-gray-600">{review.role}</p>
+                       <div className="flex items-center mt-1">
+                         <Building className="w-4 h-4 text-gray-400 mr-1" />
+                         <span className="text-sm text-gray-600">{review.company}</span>
+                       </div>
+                     </div>
+                   </div>
+                   <div className="flex items-center mb-3">{renderStars(review.rating)}</div>
+                   <div className="mb-4 flex-grow">
+                     <Quote className="w-6 h-6 text-blue-600 mb-2" />
+                     <p className="text-gray-700 italic line-clamp-4">"{review.review}"</p>
+                   </div>
+                   <button
+                     onClick={() => handleSeeMoreClick(review)}
+                     className="text-sm text-blue-600 font-semibold hover:underline self-start mb-4"
+                   >
+                     See more...
+                   </button>
+                   <div className="border-t pt-3 mt-auto">
+                     <span className="text-sm text-blue-600 font-medium">Project: {review.project}</span>
+                   </div>
+                 </div>
+               </motion.div>
+             ))}
+           </Slider>
+        </motion.div>
+
+
         {/* ... (অন্যান্য সেকশন অপরিবর্তিত) ... */}
       </div>
 

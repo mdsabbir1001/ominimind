@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'; // Import useState and useEffect
 import { Link } from 'react-router-dom';
 import { ArrowRight, Users, Award, Sparkles } from 'lucide-react';
+import { motion } from 'framer-motion'; // Import motion from framer-motion
 
 const Home = () => {
   // State to keep track of the current image index for the slider
@@ -8,8 +9,8 @@ const Home = () => {
 
   // Array of image URLs for the slider
   const heroImages = [
-    'https://ik.imagekit.io/minimind/Cover/Illustration.png?updatedAt=1750969715455',
     'https://ik.imagekit.io/minimind/Cover/Motions.png?updatedAt=1750970380533',
+    'https://ik.imagekit.io/minimind/Cover/Illustration.png?updatedAt=1750969715455',
     'https://ik.imagekit.io/minimind/Cover/Social%20Media.png?updatedAt=1750969086377',
     // Add more image URLs here
   ];
@@ -27,6 +28,17 @@ const Home = () => {
     // Cleanup function to clear the interval when the component unmounts
     return () => clearInterval(intervalId);
   }, [heroImages.length]); // Re-run effect if the number of images changes
+
+  // Define animation variants
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  };
 
 
   return (
@@ -49,7 +61,13 @@ const Home = () => {
         </div>
 
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 z-10"> {/* Added z-10 to bring content above images */}
+        <motion.div // Animate the Hero content
+          className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 z-10" // Added z-10 to bring content above images
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+        >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Column (Text and Buttons) */}
             <div>
@@ -85,11 +103,17 @@ const Home = () => {
                 {/* This column is now empty or can be used for other content if needed */}
              </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gray-50">
+      <motion.section // Animate the Stats section
+        className="py-16 bg-gray-50"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
@@ -97,20 +121,30 @@ const Home = () => {
               { number: '90%', label: 'Happy Clients', icon: Users },
               ///{ number: '2', label: 'Years Experience', icon: Sparkles },
             ].map((stat, index) => (
-              <div key={index} className="text-center">
+              <motion.div // Animate each stat item
+                key={index}
+                className="text-center"
+                variants={itemVariants}
+              >
                 <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 bg-gradient-to-br from-blue-100 to-purple-100">
                   <stat.icon className="w-8 h-8 text-blue-600" />
                 </div>
                 <div className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</div>
                 <div className="text-gray-600">{stat.label}</div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Services Preview */}
-      <section className="py-20">
+      <motion.section // Animate the Services Preview section
+        className="py-20"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -140,7 +174,11 @@ const Home = () => {
                 image: 'https://ik.imagekit.io/minimind/Cover/Marketing%20&%20Print%20Materials.png?updatedAt=1750792615429',
               },
             ].map((service, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
+              <motion.div // Animate each service card
+                key={index}
+                className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow group"
+                variants={itemVariants}
+              >
                 <div className="relative overflow-hidden">
                   <img
                     src={service.image}
@@ -153,7 +191,7 @@ const Home = () => {
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
                   <p className="text-gray-600">{service.description}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
@@ -167,10 +205,16 @@ const Home = () => {
             </Link>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
+      <motion.section // Animate the CTA section
+        className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Ready to Transform Your Brand?
@@ -193,7 +237,7 @@ const Home = () => {
             </Link>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
 import emailjs from 'emailjs-com';
+import { motion } from 'framer-motion'; // Import motion from framer-motion
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,7 +16,19 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleInputChange = (e) => {
+  // Define animation variants
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  };
+
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -39,6 +52,7 @@ const Contact = () => {
       setSubmitted(true);
     }, (error) => {
       alert('Failed to send message. Please try again.');
+      setIsSubmitting(false); // Ensure submitting state is reset on error
     });
   };
 
@@ -59,30 +73,44 @@ const Contact = () => {
     <div className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+        >
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Get In <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Touch</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ready to transform your brand? Let's discuss your project and see how we can help 
+            Ready to transform your brand? Let's discuss your project and see how we can help
             bring your vision to life through exceptional design.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <motion.div
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12"
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
           {/* Contact Information */}
           <div className="space-y-8">
-            <div>
+            <motion.div variants={itemVariants}> {/* Animate the intro text */}
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Let's Start a Conversation</h2>
               <p className="text-gray-600 mb-8">
-                We're here to help you create something amazing. Whether you need a complete brand overhaul 
+                We're here to help you create something amazing. Whether you need a complete brand overhaul
                 or a single design project, our team is ready to make your vision come to life.
               </p>
-            </div>
+            </motion.div>
+
 
             {/* Contact Details */}
             <div className="space-y-6">
-              <div className="flex items-start space-x-4">
+              {/* Animate each contact detail item */}
+              <motion.div className="flex items-start space-x-4" variants={itemVariants}>
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Mail className="w-6 h-6 text-blue-600" />
                 </div>
@@ -90,9 +118,9 @@ const Contact = () => {
                   <h3 className="text-lg font-semibold text-gray-900">Email Us</h3>
                   <p className="text-gray-600">minimindgpx.team@gmail.com</p>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="flex items-start space-x-4">
+              <motion.div className="flex items-start space-x-4" variants={itemVariants}>
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Phone className="w-6 h-6 text-blue-600" />
                 </div>
@@ -100,9 +128,9 @@ const Contact = () => {
                   <h3 className="text-lg font-semibold text-gray-900">Call Us</h3>
                   <p className="text-gray-600">+880 09611081881</p>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="flex items-start space-x-4">
+              <motion.div className="flex items-start space-x-4" variants={itemVariants}>
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Clock className="w-6 h-6 text-blue-600" />
                 </div>
@@ -110,10 +138,9 @@ const Contact = () => {
                   <h3 className="text-lg font-semibold text-gray-900">Business Hours</h3>
                   <p className="text-gray-600">24/7 Support</p>
                 </div>
-              </div>
-            </div>
+              </motion.div>
 
-            <div className="flex items-start space-x-4">
+              <motion.div className="flex items-start space-x-4" variants={itemVariants}>
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-6 h-6 text-blue-600" />
                 </div>
@@ -121,26 +148,31 @@ const Contact = () => {
                   <h3 className="text-lg font-semibold text-gray-900">Location</h3>
                   <p className="text-gray-600">Dhaka, Bangladesh</p>
                 </div>
+              </motion.div>
             </div>
 
             {/* Quick Response Promise */}
-            <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-lg">
+            <motion.div
+              className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-lg"
+              variants={itemVariants} // Animate the quick response box
+            >
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Quick Response Guarantee</h3>
               <p className="text-gray-600">
-                We respond to all inquiries within 24 hours during business days. 
+                We respond to all inquiries within 24 hours during business days.
                 For urgent projects, we offer same-day consultations.
               </p>
-            </div>
+            </motion.div>
           </div>
 
           {/* Contact Form */}
           <div className="bg-white rounded-lg shadow-lg p-8">
             {!submitted ? (
               <form onSubmit={sendEmail} className="space-y-6">
-                <div>
+                <motion.div variants={itemVariants}> {/* Animate the form header */}
                   <h2 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
-                </div>
+                </motion.div>
 
+                {/* Form fields could also be animated individually using itemVariants if desired */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -276,13 +308,18 @@ const Contact = () => {
                 </button>
               </form>
             ) : (
-              <div className="text-center py-8">
+              <motion.div // Animate the success message
+                className="text-center py-8"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+              >
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <CheckCircle className="w-8 h-8 text-green-600" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Message Sent Successfully!</h3>
                 <p className="text-gray-600 mb-6">
-                  Thank you for reaching out! We've received your message and will get back to you 
+                  Thank you for reaching out! We've received your message and will get back to you
                   within 24 hours with a detailed response.
                 </p>
                 <button
@@ -291,10 +328,10 @@ const Contact = () => {
                 >
                   Send Another Message
                 </button>
-              </div>
+              </motion.div>
             )}
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
