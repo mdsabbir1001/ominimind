@@ -16,8 +16,7 @@ function App() {
   useEffect(() => {
     const fetchBackendData = async () => {
       try {
-        // Replace with your deployed backend URL
-        const response = await fetch('https://your-deployed-backend-url.onrender.com/'); 
+        const response = await fetch('https://minimind-backend.onrender.com/'); 
         const data = await response.json();
         console.log('Data from backend:', data);
       } catch (error) {
