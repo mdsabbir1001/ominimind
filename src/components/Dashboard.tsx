@@ -16,7 +16,10 @@ const Dashboard: React.FC = () => {
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
-    initializeSampleData();
+    const initData = async () => {
+      await initializeSampleData();
+    };
+    initData();
   }, []);
 
   const renderSection = () => {

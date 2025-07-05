@@ -6,6 +6,7 @@ from supabase import create_client, Client
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from typing import List, Optional
+import json
 
 load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '.env'))
 
@@ -61,6 +62,11 @@ class TeamMember(BaseModel):
     name: str
     designation: str
     image_url: str
+    bio: Optional[str] = None
+    specialties: Optional[List[str]] = None
+    social_url_a: Optional[str] = None
+    social_url_b: Optional[str] = None
+    social_url_c: Optional[str] = None
 
 class PortfolioCategory(BaseModel):
     name: str
@@ -117,17 +123,35 @@ def login(credentials: UserCredentials):
 async def get_content(key: str):
     try:
         response, count = supabase.table('contents').select("*").eq("key", key).single().execute()
-        return response[1] if response[1] else {}
+        if response[1]:
+            content_data = response[1]
+            if 'value' in content_data and content_data['value']:
+                try:
+                    parsed_value = json.loads(content_data['value'])
+                    if 'featuredServices' not in parsed_value or not isinstance(parsed_value['featuredServices'], list):
+                        parsed_value['featuredServices'] = []
+                    content_data['value'] = parsed_value
+                except json.JSONDecodeError:
+                    content_data['value'] = {"featuredServices": []} # Fallback if JSON is invalid
+            else:
+                content_data['value'] = {"featuredServices": []} # Default if value is empty
+            return content_data
+        return {"value": {"featuredServices": []}} # Default if no content found
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.put("/content/{key}")
 async def update_content(key: str, content: Content, user: dict = Depends(get_current_user)):
     try:
-        response, count = supabase.table('contents').update(content.dict()).eq("key", key).execute()
+        # Convert content value to JSON string before saving
+        content_dict = content.dict()
+        if 'value' in content_dict and content_dict['value'] is not None:
+            content_dict['value'] = json.dumps(content_dict['value'])
+
+        response, count = supabase.table('contents').update(content_dict).eq("key", key).execute()
         if not response[1]:
              # If key doesn't exist, create it
-            response, count = supabase.table('contents').insert(content.dict()).execute()
+            response, count = supabase.table('contents').insert(content_dict).execute()
         return response[1]
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

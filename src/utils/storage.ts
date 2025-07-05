@@ -11,6 +11,16 @@ import {
   SectionImages
 } from '../types';
 import { generateOrderId } from './orderUtils';
+import axios from 'axios';
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+
+// Placeholder for getting authentication token
+const getToken = (): string | null => {
+  // Implement your actual token retrieval logic here
+  // e.g., from localStorage, sessionStorage, or a global state management
+  return localStorage.getItem('access_token'); // Assuming token is stored in localStorage
+};
 
 const STORAGE_KEYS = {
   SERVICES: 'admin_services',
@@ -99,18 +109,55 @@ export const getOrders = (): Order[] => {
 };
 
 // Home Content
-export const saveHomeContent = (content: HomeContent): void => {
-  saveToStorage(STORAGE_KEYS.HOME_CONTENT, content);
+export const saveHomeContent = async (content: HomeContent): Promise<void> => {
+  try {
+    const token = getToken();
+    await axios.put(`${API_BASE_URL}/content/home_content`, {
+      key: "home_content",
+      value: content,
+    }, {
+      headers: {
+        Authorization: token ? `Bearer ${token}` : '',
+      },
+    });
+  } catch (error) {
+    console.error("Error saving home content:", error);
+    throw error; // Re-throw to be handled by the component
+  }
 };
 
-export const getHomeContent = (): HomeContent => {
-  return getFromStorage(STORAGE_KEYS.HOME_CONTENT, {
-    heroTitle: 'Creative Digital Solutions for Your Business',
-    heroSubtitle: 'We transform ideas into powerful digital experiences that drive growth and success.',
-    heroImage: 'https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    aboutText: 'At MiniMind Creatives, we are passionate about creating innovative digital solutions that help businesses thrive in the modern world. Our team combines creativity with technical expertise to deliver exceptional results.',
-    featuredServices: ['1', '2']
-  });
+export const getHomeContent = async (): Promise<HomeContent> => {
+  try {
+    const token = getToken();
+    const response = await axios.get(`${API_BASE_URL}/content/home_content`, {
+      headers: {
+        Authorization: token ? `Bearer ${token}` : '',
+      },
+    });
+    // The backend returns { key: "home_content", value: { ... } }
+    // We need to return just the value part
+    return response.data.value || {
+      heroTitle: '',
+      heroSubtitle: '',
+      heroImage: '',
+      ctaButtonText: '',
+      ctaButtonLink: '',
+      aboutText: '',
+      featuredServices: [],
+    };
+  } catch (error) {
+    console.error("Error fetching home content:", error);
+    // Fallback to default values if API call fails
+    return {
+      heroTitle: 'Creative Digital Solutions for Your Business',
+      heroSubtitle: 'We transform ideas into powerful digital experiences that drive growth and success.',
+      heroImage: 'https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      ctaButtonText: 'Get Started',
+      ctaButtonLink: '/contact',
+      aboutText: 'At MiniMind Creatives, we are passionate about creating innovative digital solutions that help businesses thrive in the modern world. Our team combines creativity with technical expertise to deliver exceptional results.',
+      featuredServices: ['1', '2']
+    };
+  }
 };
 
 // Contact Info
@@ -173,7 +220,10 @@ export const addOrder = (order: Omit<Order, 'id' | 'orderDate'>): void => {
 };
 
 // Initialize with sample data
-export const initializeSampleData = (): void => {
+export const initializeSampleData = async (): Promise<void> => {
+  // Home content is now fetched from the backend, so no need to initialize here
+  // if (getHomeContent()) { /* ... */ }
+
   if (getServices().length === 0) {
     const sampleServices: Service[] = [
       {

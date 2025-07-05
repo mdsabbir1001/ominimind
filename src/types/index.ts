@@ -86,6 +86,8 @@ export interface HomeContent {
   heroTitle: string;
   heroSubtitle: string;
   heroImage: string;
+  ctaButtonText: string;
+  ctaButtonLink: string;
   aboutText: string;
   featuredServices: string[];
 }

@@ -4,16 +4,39 @@ import { HomeContent as HomeContentType } from '../../types';
 import { getHomeContent, saveHomeContent } from '../../utils/storage';
 import Button from '../Common/Button';
 import Header from '../Layout/Header';
+import axios from 'axios';
+import { getToken } from '../../utils/storage';
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
 
 const HomeContent: React.FC = () => {
-  const [content, setContent] = useState<HomeContentType>(getHomeContent());
+  const [content, setContent] = useState<HomeContentType>({
+    heroTitle: '',
+    heroSubtitle: '',
+    heroImage: '',
+    ctaButtonText: '',
+    ctaButtonLink: '',
+    aboutText: '',
+    featuredServices: [],
+  });
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchContent = async () => {
+      try {
+        const fetchedContent = await getHomeContent();
+        setContent(fetchedContent);
+      } catch (error) {
+        console.error("Failed to fetch home content:", error);
+      }
+    };
+    fetchContent();
+  }, []);
 
   const handleSave = async () => {
     setLoading(true);
     try {
-      saveHomeContent(content);
-      // Show success message
+      await saveHomeContent(content);
       alert('Home content saved successfully!');
     } catch (error) {
       alert('Error saving content');
@@ -22,15 +45,29 @@ const HomeContent: React.FC = () => {
     }
   };
 
-  const handleImageUpload = (field: keyof HomeContentType) => (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleImageUpload = (field: keyof HomeContentType) => async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        const result = e.target?.result as string;
-        setContent(prev => ({ ...prev, [field]: result }));
-      };
-      reader.readAsDataURL(file);
+      setLoading(true);
+      const formData = new FormData();
+      formData.append('file', file);
+
+      try {
+        const token = getToken();
+        const response = await axios.post(`${API_BASE_URL}/images/upload`, formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+            Authorization: token ? `Bearer ${token}` : '',
+          },
+        });
+        setContent(prev => ({ ...prev, [field]: response.data.url }));
+        alert('Image uploaded successfully!');
+      } catch (error) {
+        console.error("Error uploading image:", error);
+        alert('Error uploading image');
+      } finally {
+        setLoading(false);
+      }
     }
   };
 
@@ -110,6 +147,30 @@ const HomeContent: React.FC = () => {
                       />
                     </div>
                   )}
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    CTA Button Text
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    value={content.ctaButtonText}
+                    onChange={(e) => setContent(prev => ({ ...prev, ctaButtonText: e.target.value }))}
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    CTA Button Link
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    value={content.ctaButtonLink}
+                    onChange={(e) => setContent(prev => ({ ...prev, ctaButtonLink: e.target.value }))}
+                  />
                 </div>
               </div>
             </div>

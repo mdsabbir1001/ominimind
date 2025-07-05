@@ -1,8 +1,5 @@
-Main Heading Field
-Description field
-
-And Service category card e ja thakbe:
-cover image upload
-
-Service category card er title , Discription, icon (pase)
-erpor ei category er moddhe ki ki service ache sei gulo list like: Logo design, Branding, latter
+Name
+Designation
+Description
+Image
+social media Link
