@@ -31,7 +31,7 @@ const OrderModal = ({ isOpen, onClose, selectedPkg }) => {
     const orderData = {
       ...formData,
       order_id,
-      package_name: selectedPkg.title,
+      package_name: selectedPkg.name,
       package_price: String(selectedPkg.price),
     };
 
