@@ -316,7 +316,7 @@ const Portfolio = () => {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 overflow-y-auto h-[60vh]">
-              {(selectedProject.project_images || []).map((imageUrl, index) => (
+              {(selectedProject.project_images || []).slice().reverse().map((imageUrl, index) => (
                 <div
                   key={imageUrl}
                   className="w-full cursor-pointer"
