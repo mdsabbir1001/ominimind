@@ -27,6 +27,8 @@ export interface Package {
   price: string;
   features: string[];
   is_popular: boolean;
+  display_order?: number;
+  updated_at?: string;
 }
 
 export interface PortfolioItem {
