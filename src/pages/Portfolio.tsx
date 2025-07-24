@@ -321,7 +321,7 @@ const Portfolio = () => {
                   key={imageUrl}
                   className="w-full cursor-pointer"
                   style={{ aspectRatio: selectedProject.aspect_ratio || 'auto' }}
-                  onClick={() => openFullScreen(index)}
+                  onClick={() => openFullScreen(selectedProject.project_images.length - 1 - index)}
                 >
                   <img
                     src={imageUrl}

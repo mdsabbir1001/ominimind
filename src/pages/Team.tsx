@@ -31,24 +31,7 @@ const Team = () => {
       }
       const data: TeamMember[] = await response.json();
 
-      const desiredOrder = ["Team Leader", "Manager", "Branding Designer", "Social Media Designer"];
-      const sortedTeam = data.sort((a, b) => {
-        const aIndex = desiredOrder.indexOf(a.designation);
-        const bIndex = desiredOrder.indexOf(b.designation);
-
-        if (aIndex > -1 && bIndex > -1) {
-          return aIndex - bIndex;
-        }
-        if (aIndex > -1) {
-          return -1;
-        }
-        if (bIndex > -1) {
-          return 1;
-        }
-        return 0;
-      });
-
-      setTeam(sortedTeam);
+      setTeam(data);
     } catch (err: any) {
       setError(err.message);
     } finally {
