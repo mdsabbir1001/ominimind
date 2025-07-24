@@ -317,7 +317,12 @@ const Portfolio = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 overflow-y-auto h-[60vh]">
               {(selectedProject.project_images || []).map((imageUrl, index) => (
-                <div key={imageUrl} className="w-full cursor-pointer" onClick={() => openFullScreen(index)}>
+                <div
+                  key={imageUrl}
+                  className="w-full cursor-pointer"
+                  style={{ aspectRatio: selectedProject.aspect_ratio || 'auto' }}
+                  onClick={() => openFullScreen(index)}
+                >
                   <img
                     src={imageUrl}
                     alt={`${selectedProject.title} - ${index + 1}`}
